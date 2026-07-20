@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:45:16.546Z",
+  "generatedAt": "2026-07-20T10:51:24.421Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -196,6 +196,10 @@
     "glossaryCount": {
       "en": "{count} terms",
       "fa": "{count} واژه"
+    },
+    "glossaryBack": {
+      "en": "← Back",
+      "fa": "بازگشت ←"
     },
     "emptyDash": {
       "en": "—",

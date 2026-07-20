@@ -193,6 +193,56 @@
     return glossaryEntries;
   }
 
+  function captureGlossaryReturn() {
+    var page = location.pathname.split("/").pop() || "index.html";
+    if (page === "glossary.html") return "";
+    var q = location.search.replace(/^\?/, "");
+    if (q) {
+      q =
+        "?" +
+        q
+          .split("&")
+          .filter(function (p) {
+            return p.indexOf("return=") !== 0;
+          })
+          .join("&");
+      if (q === "?") q = "";
+    }
+    return page + q + location.hash;
+  }
+
+  function safeReturnUrl(raw) {
+    if (!raw || typeof raw !== "string") return "story.html";
+    if (!/^[\w.-]+\.html(\?[^#]*)?(#[\w.-]*)?$/i.test(raw)) return "story.html";
+    return raw;
+  }
+
+  function resolveGlossaryReturn() {
+    var fromQuery = new URLSearchParams(location.search).get("return");
+    if (fromQuery) return safeReturnUrl(decodeURIComponent(fromQuery));
+    if (document.referrer) {
+      try {
+        var u = new URL(document.referrer);
+        if (u.origin === location.origin) {
+          var name = u.pathname.split("/").pop();
+          if (name && name !== "glossary.html") {
+            return safeReturnUrl(name + u.search + u.hash);
+          }
+        }
+      } catch (e) {
+        /* ignore */
+      }
+    }
+    return "story.html";
+  }
+
+  function glossaryHrefForTerm(id) {
+    var href = "glossary.html";
+    var ret = captureGlossaryReturn();
+    if (ret) href += "?return=" + encodeURIComponent(ret);
+    return href + "#glossary-" + id;
+  }
+
   function phraseRegex(phrase, lang) {
     if (lang === "fa") {
       var parts = String(phrase)
@@ -251,8 +301,8 @@
       var pair = termPairLabel(r.id);
       var tip = pair ? pair + "\n" + meaning : meaning;
       result +=
-        '<a class="gloss-term" href="glossary.html#glossary-' +
-        esc(r.id) +
+        '<a class="gloss-term" href="' +
+        esc(glossaryHrefForTerm(r.id)) +
         '" data-tip="' +
         esc(tip) +
         '" aria-label="' +
@@ -632,6 +682,17 @@
     }
   }
 
+  function initGlossaryBack(btnId) {
+    var btn = document.getElementById(btnId || "glossary-back");
+    if (!btn) return;
+    function paint() {
+      btn.href = resolveGlossaryReturn();
+      btn.textContent = ui("glossaryBack");
+    }
+    paint();
+    window.addEventListener("yf-lang-change", paint);
+  }
+
   function paintUi(root, fmtMap) {
     (root || document).querySelectorAll("[data-ui]").forEach(function (el) {
       var key = el.getAttribute("data-ui");
@@ -669,5 +730,7 @@
     renderGlossary: renderGlossary,
     glossaryCategoryLabel: glossaryCategoryLabel,
     paintUi: paintUi,
+    initGlossaryBack: initGlossaryBack,
+    resolveGlossaryReturn: resolveGlossaryReturn,
   };
 })();

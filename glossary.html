@@ -22,6 +22,7 @@
   </header>
 
   <main class="wrap glossary-wrap">
+    <a id="glossary-back" class="glossary-back" href="story.html"></a>
     <p class="glossary-intro" data-ui="glossaryIntro" data-glossary></p>
 
     <div class="glossary-toolbar">
@@ -38,6 +39,7 @@
     (function () {
       var Y = YardStory;
       Y.initLangToggle();
+      Y.initGlossaryBack();
 
       var searchEl = document.getElementById("glossary-search");
       var catEl = document.getElementById("glossary-category");
