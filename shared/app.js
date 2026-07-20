@@ -815,6 +815,113 @@
 
   initGlossaryInteraction();
 
+  function renderDomainModels(root) {
+    var d = data();
+    if (!d || !d.domainModel) return;
+    var dm = d.domainModel;
+    root.innerHTML = "";
+
+    var intro = document.createElement("p");
+    intro.className = "models-intro";
+    intro.innerHTML = glossaryHtml(L(dm.meta.intro));
+    root.appendChild(intro);
+
+    var source = document.createElement("p");
+    source.className = "models-source muted";
+    source.textContent = L(dm.meta.source);
+    root.appendChild(source);
+
+    (dm.sections || []).forEach(function (sec) {
+      var section = document.createElement("section");
+      section.className = "models-section";
+      section.id = "models-" + sec.id;
+      var html = "<h3>" + esc(L(sec.title)) + "</h3>";
+      if (sec.body) html += "<p class='models-section-body'>" + glossaryHtml(L(sec.body)) + "</p>";
+      if (sec.items && sec.items.length) {
+        html += "<ul class='models-list'>";
+        sec.items.forEach(function (item) {
+          var text = typeof item === "string" ? item : L(item);
+          html += "<li>" + glossaryHtml(text) + "</li>";
+        });
+        html += "</ul>";
+      }
+      section.innerHTML = html;
+      root.appendChild(section);
+    });
+
+    var invSec = document.createElement("section");
+    invSec.className = "models-section";
+    invSec.innerHTML = "<h3>" + esc(ui("modelsInvariantsHeading")) + "</h3><ul class='models-list'></ul>";
+    var invList = invSec.querySelector(".models-list");
+    (dm.invariants || []).forEach(function (item) {
+      var li = document.createElement("li");
+      li.innerHTML = glossaryHtml(L(item));
+      invList.appendChild(li);
+    });
+    root.appendChild(invSec);
+
+    var entHead = document.createElement("h3");
+    entHead.className = "models-entities-heading";
+    entHead.textContent = ui("modelsEntitiesHeading");
+    root.appendChild(entHead);
+
+    var byGroup = {};
+    (dm.entities || []).forEach(function (e) {
+      if (!byGroup[e.group]) byGroup[e.group] = [];
+      byGroup[e.group].push(e);
+    });
+
+    (dm.entityGroups || []).forEach(function (g) {
+      var list = byGroup[g.id];
+      if (!list || !list.length) return;
+
+      var groupSec = document.createElement("section");
+      groupSec.className = "models-entity-group";
+      groupSec.innerHTML = "<h4>" + esc(L(g.label)) + "</h4>";
+
+      var table = document.createElement("table");
+      table.className = "models-table";
+      table.innerHTML =
+        "<thead><tr><th>" +
+        esc(ui("glossaryEnLabel")) +
+        "</th><th>" +
+        esc(ui("modelsPurposeCol")) +
+        "</th><th>" +
+        esc(ui("modelsKeysCol")) +
+        "</th></tr></thead>";
+      var tbody = document.createElement("tbody");
+
+      list.forEach(function (e) {
+        var tr = document.createElement("tr");
+        var nameCell =
+          e.glossaryId
+            ? '<a class="gloss-term" href="' +
+              esc(glossaryHrefForTerm(e.glossaryId)) +
+              '" data-term-id="' +
+              esc(e.glossaryId) +
+              '" data-tip="' +
+              esc(termPairLabel(e.glossaryId) + "\n" + termMeaning(e.glossaryId)) +
+              '">' +
+              esc(L(e.name)) +
+              "</a>"
+            : esc(L(e.name));
+        tr.innerHTML =
+          "<td class='models-name'>" +
+          nameCell +
+          "</td><td>" +
+          glossaryHtml(L(e.purpose)) +
+          "</td><td class='models-keys'><code>" +
+          esc(L(e.keys)) +
+          "</code></td>";
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      groupSec.appendChild(table);
+      root.appendChild(groupSec);
+    });
+  }
+
   function paintUi(root, fmtMap) {
     (root || document).querySelectorAll("[data-ui]").forEach(function (el) {
       var key = el.getAttribute("data-ui");
@@ -855,6 +962,7 @@
     initGlossaryBack: initGlossaryBack,
     initGlossaryInteraction: initGlossaryInteraction,
     closeGlossPopover: closeGlossPopover,
+    renderDomainModels: renderDomainModels,
     resolveGlossaryReturn: resolveGlossaryReturn,
   };
 })();
