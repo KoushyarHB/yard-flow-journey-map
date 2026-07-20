@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:57:23.943Z",
+  "generatedAt": "2026-07-20T11:39:16.515Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -2365,7 +2365,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "order-item",
@@ -2386,7 +2387,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "product-family",
@@ -2411,7 +2413,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "product-unit",
@@ -2434,7 +2437,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "bol",
@@ -2457,7 +2461,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "position-number",
@@ -2477,7 +2482,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "depot",
@@ -2500,7 +2506,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "export-warehouse",
@@ -2520,7 +2527,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "yard-selection",
@@ -2542,7 +2550,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "release",
@@ -2564,7 +2573,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "kotaj",
@@ -2587,7 +2597,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "vessel",
@@ -2609,7 +2620,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "voyage",
@@ -2630,7 +2642,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "hold",
@@ -2651,7 +2664,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "color-mark",
@@ -2674,7 +2688,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "guidance-unit",
@@ -2696,7 +2711,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "depot-tallyman",
@@ -2716,7 +2732,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "depot-receipt",
@@ -2738,7 +2755,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "bijak",
@@ -2760,7 +2778,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "bijak-closing",
@@ -2782,7 +2801,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "yard-supervisor",
@@ -2800,7 +2820,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "control-office",
@@ -2818,7 +2839,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "gate-security",
@@ -2841,7 +2863,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "special-zone-security",
@@ -2857,7 +2880,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "vessel-tallyman",
@@ -2875,7 +2899,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "terminal-unit",
@@ -2893,7 +2918,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "mobarakeh-expert",
@@ -2909,7 +2935,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "packing-list",
@@ -2928,7 +2955,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "reconciliation",
@@ -2949,7 +2977,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "discrepancy",
@@ -2970,7 +2999,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "in-transit",
@@ -2992,7 +3022,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §78–88"
-        }
+        },
+        "link": false
       },
       {
         "id": "master-data",
@@ -3012,7 +3043,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "arvand",
@@ -3034,7 +3066,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "yardflow",
@@ -3050,7 +3083,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "heat-no",
@@ -3068,7 +3102,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "tonnage",
@@ -3090,7 +3125,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "rail-wagon",
@@ -3112,7 +3148,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "flatbed-truck",
@@ -3132,7 +3169,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "crane",
@@ -3150,7 +3188,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "special-zone",
@@ -3166,7 +3205,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "shift",
@@ -3182,7 +3222,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "driver-payment",
@@ -3198,7 +3239,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §78–88"
-        }
+        },
+        "link": true
       },
       {
         "id": "overdue-confirmation",
@@ -3220,7 +3262,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §78–88"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-expected",
@@ -3238,7 +3281,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-received",
@@ -3256,7 +3300,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-available",
@@ -3277,7 +3322,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-yard-selected",
@@ -3295,7 +3341,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-verified",
@@ -3313,7 +3360,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-color-marked",
@@ -3331,7 +3379,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-released",
@@ -3349,7 +3398,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-bijak",
@@ -3367,7 +3417,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-gate-exited",
@@ -3385,7 +3436,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-vessel-received",
@@ -3403,7 +3455,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "status-closed",
@@ -3421,7 +3474,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §9"
-        }
+        },
+        "link": false
       },
       {
         "id": "bijak-green-copy",
@@ -3437,7 +3491,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
-        }
+        },
+        "link": true
       },
       {
         "id": "bijak-white-copy",
@@ -3453,7 +3508,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
-        }
+        },
+        "link": true
       },
       {
         "id": "bijak-gate-copy",
@@ -3469,7 +3525,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
-        }
+        },
+        "link": true
       },
       {
         "id": "truck-journey",
@@ -3491,7 +3548,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §78–88"
-        }
+        },
+        "link": true
       },
       {
         "id": "inventory",
@@ -3511,7 +3569,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "loading-report",
@@ -3527,7 +3586,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "dashboard",
@@ -3543,7 +3603,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "quality-grade",
@@ -3564,7 +3625,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "thickness",
@@ -3582,7 +3644,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "customer",
@@ -3602,7 +3665,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "bandar-abbas",
@@ -3620,7 +3684,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "isfahan-origin",
@@ -3641,7 +3706,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "admin",
@@ -3659,7 +3725,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "manager",
@@ -3677,7 +3744,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "barcode-token",
@@ -3699,7 +3767,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §78–88"
-        }
+        },
+        "link": true
       },
       {
         "id": "ready-for-release",
@@ -3717,7 +3786,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "partial-delivery",
@@ -3736,7 +3806,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "controlled-inventory",
@@ -3752,7 +3823,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §10"
-        }
+        },
+        "link": true
       },
       {
         "id": "yard",
@@ -3774,7 +3846,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "placement",
@@ -3796,7 +3869,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "release-no",
@@ -3814,7 +3888,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "release-plan",
@@ -3834,7 +3909,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "width",
@@ -3850,7 +3926,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "length",
@@ -3866,7 +3943,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "weight",
@@ -3887,7 +3965,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "truck-plate",
@@ -3908,7 +3987,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "driver",
@@ -3924,7 +4004,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "approved-truck",
@@ -3942,7 +4023,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "quay",
@@ -3962,7 +4044,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "barge",
@@ -3978,7 +4061,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "slab",
@@ -3994,7 +4078,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "coil",
@@ -4014,7 +4099,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "sheet",
@@ -4035,7 +4121,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "destination",
@@ -4057,7 +4144,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "order-no",
@@ -4075,7 +4163,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "inbound-registration",
@@ -4094,7 +4183,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "gate-exit",
@@ -4116,7 +4206,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "vessel-receipt",
@@ -4138,7 +4229,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "bijak-yellow-copy",
@@ -4154,7 +4246,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
-        }
+        },
+        "link": true
       },
       {
         "id": "factory-mark",
@@ -4172,7 +4265,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §6–7"
-        }
+        },
+        "link": true
       },
       {
         "id": "free-stock",
@@ -4190,7 +4284,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "shift-report",
@@ -4206,7 +4301,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       },
       {
         "id": "archive",
@@ -4224,7 +4320,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "role-permission",
@@ -4244,7 +4341,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "plate-reader",
@@ -4263,7 +4361,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": false
       },
       {
         "id": "excel-export",
@@ -4282,7 +4381,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §4"
-        }
+        },
+        "link": true
       },
       {
         "id": "loading",
@@ -4303,7 +4403,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": false
       },
       {
         "id": "rail-inbound",
@@ -4321,7 +4422,8 @@
         "source": {
           "type": "domain",
           "ref": "yardflow_domain_analysis_v6.1.md §5"
-        }
+        },
+        "link": true
       }
     ]
   },

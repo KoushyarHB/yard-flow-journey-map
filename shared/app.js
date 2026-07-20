@@ -172,19 +172,15 @@
     }
     var out = [];
     d.glossary.terms.forEach(function (t) {
+      if (t.link === false) return;
       function add(phrase, lang) {
         var p = String(phrase || "").trim();
-        if (p.length < 2) return;
+        var minLen = lang === "en" ? 5 : 4;
+        if (p.length < minLen) return;
         out.push({ phrase: p, id: t.id, lang: lang, len: p.length });
       }
       add(t.en, "en");
       add(t.fa, "fa");
-      (t.aliasesEn || []).forEach(function (a) {
-        add(a, "en");
-      });
-      (t.aliasesFa || []).forEach(function (a) {
-        add(a, "fa");
-      });
     });
     out.sort(function (a, b) {
       return b.len - a.len;
@@ -285,13 +281,26 @@
         }
         if (overlap) continue;
         for (i = start; i < end; i++) used[i] = true;
-        replacements.push({ start: start, end: end, id: e.id, text: m[0] });
+        replacements.push({ start: start, end: end, id: e.id, text: m[0], len: e.len });
       }
     });
 
     replacements.sort(function (a, b) {
       return a.start - b.start;
     });
+
+    var maxLinks = Math.max(1, Math.ceil(replacements.length * 0.75));
+    if (replacements.length > maxLinks) {
+      replacements = replacements
+        .slice()
+        .sort(function (a, b) {
+          return b.len - a.len;
+        })
+        .slice(0, maxLinks)
+        .sort(function (a, b) {
+          return a.start - b.start;
+        });
+    }
 
     var result = "";
     var pos = 0;
