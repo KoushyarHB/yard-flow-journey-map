@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:51:24.421Z",
+  "generatedAt": "2026-07-20T10:54:38.350Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -107,7 +107,7 @@
     },
     "physicalLabel": {
       "en": "In the physical yard",
-      "fa": "در محوطه"
+      "fa": "در محوطه فیزیکی"
     },
     "userDoesLabel": {
       "en": "What the user does in software",
@@ -115,11 +115,11 @@
     },
     "systemLabel": {
       "en": "What the system records",
-      "fa": "ثبت در سامانه"
+      "fa": "سامانه چه ثبت می‌کند"
     },
     "rulesLabel": {
       "en": "Hard business rules",
-      "fa": "قواعد اجرایی"
+      "fa": "قواعد سخت کسب‌وکار"
     },
     "donePrefix": {
       "en": "Done when — ",
