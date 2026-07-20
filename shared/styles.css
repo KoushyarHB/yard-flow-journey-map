@@ -266,8 +266,8 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--muted); margin-bottom: 0.45rem;
 }
-.block ul { padding-left: 1.1rem; color: var(--ink); font-size: 0.92rem; }
-.block li { margin: 0.3rem 0; }
+.block ul { padding-left: 1.1rem; color: var(--ink); font-size: 0.92rem; list-style: disc; }
+.block li { margin: 0.3rem 0; display: list-item; }
 
 .done {
   margin: 1rem 0;
@@ -439,7 +439,8 @@ html[dir="rtl"] .why {
   border-right: 3px solid var(--accent);
   border-radius: 10px 0 0 10px;
 }
-html[dir="rtl"] .block ul { padding-left: 0; padding-right: 1.1rem; }
+html[dir="rtl"] .block ul { padding-left: 0; padding-right: 1.1rem; list-style-type: disc; }
+html[dir="rtl"] .block li { display: list-item; margin: 0.35rem 0; }
 html[dir="rtl"] .done::before { content: none; }
 html[dir="rtl"] .scene,
 html[dir="rtl"] .why,

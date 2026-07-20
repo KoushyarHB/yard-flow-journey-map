@@ -40,6 +40,11 @@
 
   /** Western ↔ Persian digits so FA UI never shows 1,2,12 and EN never shows ۱،۲،۱۲ */
   function localizeDigits(value) {
+    if (Array.isArray(value)) {
+      return value.map(function (item) {
+        return localizeDigits(item);
+      });
+    }
     var s = String(value == null ? "" : value);
     if (getLang() === "fa") {
       return s
@@ -59,6 +64,25 @@
       });
   }
 
+  /** Persian typography: space after ، ؛ and no space before . ؟ ! */
+  function normalizeFaPunctuation(value) {
+    if (getLang() !== "fa") return value;
+    if (Array.isArray(value)) {
+      return value.map(function (item) {
+        return normalizeFaPunctuation(item);
+      });
+    }
+    return String(value == null ? "" : value)
+      .replace(/\s+([.؟!])/g, "$1")
+      .replace(/([،؛:])(?=[^\s])/g, "$1 ")
+      .replace(/ {2,}/g, " ")
+      .trim();
+  }
+
+  function formatLocalized(value) {
+    return normalizeFaPunctuation(localizeDigits(value));
+  }
+
   /** Pick bilingual field: {en,fa} or plain string fallback */
   function L(field) {
     if (field == null) return "";
@@ -69,9 +93,10 @@
       if (field[lang] != null) out = field[lang];
       else if (field.en != null) out = field.en;
       else if (field.fa != null) out = field.fa;
+      else if (Array.isArray(field)) out = field;
       else out = String(field);
     } else out = String(field);
-    return localizeDigits(out);
+    return formatLocalized(out);
   }
 
   function ui(key) {
