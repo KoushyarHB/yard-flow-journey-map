@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-20T10:24:21.758Z",
+  "generatedAt": "2026-07-20T10:27:16.772Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
-      "fa": "Yard Flow · داستان کاربرد کسب‌وکار"
+      "fa": "Yard Flow · راهنمای کاربرد عملیاتی"
     },
     "navStart": {
       "en": "Start",
@@ -31,7 +31,7 @@
     },
     "showStoryText": {
       "en": "Show story text",
-      "fa": "نمایش متن داستان"
+      "fa": "نمایش متن"
     },
     "startStory": {
       "en": "Start the cargo story →",
@@ -39,11 +39,11 @@
     },
     "lifecycleHeading": {
       "en": "Product-unit status spine ({total} statuses)",
-      "fa": "ستون فقرات وضعیت واحد محصول ({total} وضعیت)"
+      "fa": "مسیر وضعیت واحد محصول ({total} وضعیت)"
     },
     "lifecycleHint": {
       "en": "These {total} statuses are inventory facts — separate from the story chapters.",
-      "fa": "این {total} وضعیت حقایق موجودی‌اند — جدا از فصول داستان."
+      "fa": "این {total} وضعیت، وضعیت واقعی موجودی است و جدا از فصول داستان است."
     },
     "hubStoryTitle": {
       "en": "1. Follow one piece of cargo",
@@ -51,27 +51,27 @@
     },
     "hubStoryBody": {
       "en": "Twelve chapters: who acts, what happens in the yard, what they do in the software, and when the step is done. Screens appear only as tools for that moment.",
-      "fa": "دوازده فصل: چه کسی عمل می‌کند، در محوطه چه رخ می‌دهد، در نرم‌افزار چه می‌کنند، و کی این مرحله تمام است. صفحات فقط ابزار همان لحظه‌اند."
+      "fa": "دوازده فصل: چه کسی کار می‌کند، در محوطه چه اتفاقی می‌افتد، در نرم‌افزار چه می‌کنند و این مرحله کی تمام می‌شود. صفحات فقط ابزار همان لحظه‌اند."
     },
     "hubRoleTitle": {
       "en": "2. Follow a person’s day",
-      "fa": "۲. یک روز کاری یک نقش"
+      "fa": "۲. یک روز کاری هر نقش"
     },
     "hubRoleBody": {
       "en": "Supervisor, control office, depot tallyman, guidance, gate, vessel tally, terminal — each sees only the chapters they live.",
-      "fa": "سرشیفت، دفتر کنترل، بارشمار دپو، راهبری، حراست، بارشمار کشتی، ترمینال — هر نقش فقط فصل‌های خودش را می‌بیند."
+      "fa": "سرشیفت، دفتر کنترل، بارشمار دپو، راهبری، حراست، بارشمار کشتی و ترمینال — هر کدام فقط فصل‌های خودش را می‌بیند."
     },
     "storyIntro": {
       "en": "Read top to bottom. Each chapter is a usage beat: scene → why → physical yard → software actions → rules → done when → then the screens for that beat. ★ marks chapters where frontend build order disagrees with runtime business order.",
-      "fa": "از بالا به پایین بخوانید. هر فصل یک گام کاربرد است: صحنه ← چرا ← محوطه فیزیکی ← کار در نرم‌افزار ← قواعد ← وضعیت نهایی ← سپس صفحات همان گام. علامت ★ جایی است که ترتیب ساخت فرانت با ترتیب واقعی کسب‌وکار فرق دارد."
+      "fa": "از بالا به پایین بخوانید. هر فصل یک گام عملیاتی است و این بخش‌ها را پشت سر هم دارد: شرح کار، دلیل این مرحله، آنچه در محوطه رخ می‌دهد، کار در نرم‌افزار، قواعد، وضعیت نهایی و در آخر صفحات همان لحظه. علامت ★ یعنی ترتیب ساخت فرانت با ترتیب واقعی عملیات یکی نیست."
     },
     "storyFoot": {
       "en": "Domain analysis §6 end-to-end flow, §7 detailed processes, §9 lifecycle, §10 rules. Backend runtime: yard selection readiness before release confirm.",
-      "fa": "تحلیل دامنه §۶ جریان کلی، §۷ فرآیندها، §۹ چرخه عمر، §۱۰ قواعد. منطق بک‌اند: آمادگی انتخاب محوطه قبل از تأیید آزادسازی."
+      "fa": "منبع: تحلیل دامنه، بخش‌های جریان کلی، فرآیندها، چرخه عمر و قواعد. در اجرای واقعی، انتخاب محوطه باید قبل از تأیید آزادسازی کامل شود."
     },
     "rolesIntro": {
       "en": "Pick a role. Jump into the chapters that person actually lives. Full narrative stays on the cargo story page.",
-      "fa": "یک نقش را انتخاب کنید و به فصل‌هایی بروید که واقعاً با آن کار می‌کند. روایت کامل در صفحه داستان کالاست."
+      "fa": "یک نقش را انتخاب کنید و سراغ فصل‌هایی بروید که واقعاً با آن کار می‌کنید. روایت کامل در صفحه داستان کالاست."
     },
     "chapterNavLabel": {
       "en": "Story chapters ({total})",
@@ -87,15 +87,15 @@
     },
     "criticalBadge": {
       "en": "Build-order conflict",
-      "fa": "تعارض ترتیب ساخت"
+      "fa": "اختلاف ترتیب ساخت"
     },
     "whyLabel": {
       "en": "Why this step exists",
-      "fa": "چرا این گام وجود دارد"
+      "fa": "چرا این مرحله لازم است"
     },
     "physicalLabel": {
       "en": "In the physical yard",
-      "fa": "در محوطه فیزیکی"
+      "fa": "در محوطه"
     },
     "userDoesLabel": {
       "en": "What the user does in software",
@@ -103,11 +103,11 @@
     },
     "systemLabel": {
       "en": "What the system records",
-      "fa": "سامانه چه ثبت می‌کند"
+      "fa": "ثبت در سامانه"
     },
     "rulesLabel": {
       "en": "Hard business rules",
-      "fa": "قواعد سخت کسب‌وکار"
+      "fa": "قواعد اجرایی"
     },
     "donePrefix": {
       "en": "Done when — ",
@@ -115,19 +115,19 @@
     },
     "toolsLabel": {
       "en": "Screens used at this moment",
-      "fa": "صفحات استفاده‌شده در این لحظه"
+      "fa": "صفحات این مرحله"
     },
     "toolsNote": {
       "en": "These are the tools for this chapter — not a separate product. Click to enlarge.",
-      "fa": "این‌ها ابزار همین فصل‌اند — نه محصول جدا. برای بزرگ‌نمایی کلیک کنید."
+      "fa": "این صفحات فقط ابزار همان لحظه‌اند، نه بخش جدا. برای بزرگ‌نمایی کلیک کنید."
     },
     "criticalLabel": {
       "en": "Business vs build-order trap",
-      "fa": "تله ترتیب ساخت در برابر ترتیب کسب‌وکار"
+      "fa": "تفاوت ترتیب ساخت و ترتیب عملیات"
     },
     "caresAbout": {
       "en": "Cares about:",
-      "fa": "دغدغه‌ها:"
+      "fa": "دغدغه‌های اصلی:"
     },
     "chapterLink": {
       "en": "Ch {n} · {title}",
@@ -135,11 +135,11 @@
     },
     "storyPageTitle": {
       "en": "One product unit: Mobarakeh → vessel",
-      "fa": "یک واحد محصول: مبارکه ← کشتی"
+      "fa": "مسیر یک واحد محصول: مبارکه تا کشتی"
     },
     "rolesPageTitle": {
       "en": "A day in the yard — by role",
-      "fa": "یک روز در محوطه — بر اساس نقش"
+      "fa": "یک روز در محوطه، بر اساس نقش"
     },
     "emptyDash": {
       "en": "—",
