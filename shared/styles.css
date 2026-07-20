@@ -147,11 +147,18 @@ button { font: inherit; cursor: pointer; }
 .hero h2 { font-size: 1.65rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 .hero .fa { direction: rtl; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.75rem; }
 .hero p { color: var(--muted); max-width: 62ch; }
-.hero .start {
-  display: inline-block; margin-top: 1.25rem;
-  background: var(--accent); color: #fff; text-decoration: none;
-  padding: 0.7rem 1.2rem; border-radius: 10px; font-weight: 600;
+.hero .start,
+.story-tour-link .start {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
 }
+.hero .start { margin-top: 1.25rem; }
+.story-tour-link { margin: 0 0 1rem; }
 
 .progress {
   margin-bottom: 1.25rem;
