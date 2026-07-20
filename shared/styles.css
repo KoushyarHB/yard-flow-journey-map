@@ -490,47 +490,47 @@ a.gloss-term {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 0.15em;
-  position: relative;
-  cursor: help;
+  cursor: pointer;
 }
 a.gloss-term:hover {
   text-decoration-style: solid;
-  background: rgba(17, 94, 89, 0.08);
+  background: rgba(17, 94, 89, 0.06);
 }
-a.gloss-term::after {
-  content: attr(data-tip);
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 0.45rem);
-  bottom: auto;
-  transform: translateX(-50%);
-  width: max-content;
+a.gloss-term.open {
+  text-decoration-style: solid;
+  background: rgba(17, 94, 89, 0.12);
+}
+.gloss-popover {
+  position: fixed;
+  z-index: 100;
   max-width: min(22rem, 88vw);
-  padding: 0.55rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
   background: #134e4a;
   color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   font-size: 0.82rem;
-  font-weight: 400;
   line-height: 1.55;
-  text-align: start;
-  white-space: pre-line;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.12s ease, visibility 0.12s ease;
-  z-index: 60;
 }
-html[dir="rtl"] a.gloss-term::after {
+.gloss-popover-pair {
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: #99f6e4;
+  margin-bottom: 0.35rem;
+}
+.gloss-popover-meaning {
+  white-space: pre-line;
+}
+.gloss-popover-hint {
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  color: #a7f3d0;
+  opacity: 0.92;
+}
+html[dir="rtl"] .gloss-popover,
+html[dir="rtl"] .gloss-popover-meaning {
   text-align: right;
   line-height: 1.85;
-}
-a.gloss-term:hover::after,
-a.gloss-term:focus-visible::after {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Glossary page */

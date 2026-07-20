@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:54:38.350Z",
+  "generatedAt": "2026-07-20T10:57:23.943Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -200,6 +200,10 @@
     "glossaryBack": {
       "en": "← Back",
       "fa": "بازگشت ←"
+    },
+    "glossaryDblClickHint": {
+      "en": "Double-click to open full glossary entry",
+      "fa": "برای ورود به واژه‌نامه دوبار کلیک کنید"
     },
     "emptyDash": {
       "en": "—",

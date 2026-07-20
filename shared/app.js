@@ -303,6 +303,8 @@
       result +=
         '<a class="gloss-term" href="' +
         esc(glossaryHrefForTerm(r.id)) +
+        '" data-term-id="' +
+        esc(r.id) +
         '" data-tip="' +
         esc(tip) +
         '" aria-label="' +
@@ -693,6 +695,117 @@
     window.addEventListener("yf-lang-change", paint);
   }
 
+  var glossPopoverAnchor = null;
+  var glossClickTimer = null;
+
+  function ensureGlossPopover() {
+    var pop = document.getElementById("gloss-popover");
+    if (pop) return pop;
+    pop = document.createElement("div");
+    pop.id = "gloss-popover";
+    pop.className = "gloss-popover";
+    pop.hidden = true;
+    document.body.appendChild(pop);
+    return pop;
+  }
+
+  function closeGlossPopover() {
+    var pop = document.getElementById("gloss-popover");
+    if (pop) pop.hidden = true;
+    if (glossPopoverAnchor) {
+      glossPopoverAnchor.classList.remove("open");
+      glossPopoverAnchor = null;
+    }
+  }
+
+  function positionGlossPopover(anchor, pop) {
+    var rect = anchor.getBoundingClientRect();
+    var left = rect.left + rect.width / 2 - pop.offsetWidth / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - pop.offsetWidth - 8));
+    var top = rect.bottom + 8;
+    if (top + pop.offsetHeight > window.innerHeight - 8) {
+      top = rect.top - pop.offsetHeight - 8;
+    }
+    pop.style.left = left + "px";
+    pop.style.top = Math.max(8, top) + "px";
+  }
+
+  function showGlossPopover(anchor) {
+    var pop = ensureGlossPopover();
+    var tip = anchor.getAttribute("data-tip") || "";
+    var parts = tip.split("\n");
+    var pair = parts.length > 1 ? parts[0] : "";
+    var meaning = parts.length > 1 ? parts.slice(1).join("\n") : tip;
+
+    if (glossPopoverAnchor === anchor && !pop.hidden) {
+      closeGlossPopover();
+      return;
+    }
+
+    closeGlossPopover();
+    glossPopoverAnchor = anchor;
+    anchor.classList.add("open");
+
+    pop.innerHTML =
+      (pair ? '<div class="gloss-popover-pair">' + esc(pair) + "</div>" : "") +
+      '<div class="gloss-popover-meaning">' + esc(meaning) + "</div>" +
+      '<div class="gloss-popover-hint">' +
+      esc(ui("glossaryDblClickHint")) +
+      "</div>";
+    pop.hidden = false;
+    positionGlossPopover(anchor, pop);
+  }
+
+  function initGlossaryInteraction() {
+    if (document.body.dataset.glossInteractionInit) return;
+    document.body.dataset.glossInteractionInit = "1";
+
+    document.addEventListener(
+      "click",
+      function (e) {
+        var term = e.target.closest(".gloss-term");
+        if (!term) {
+          if (!e.target.closest("#gloss-popover")) closeGlossPopover();
+          return;
+        }
+        e.preventDefault();
+        if (glossClickTimer) clearTimeout(glossClickTimer);
+        glossClickTimer = setTimeout(function () {
+          glossClickTimer = null;
+          showGlossPopover(term);
+        }, 220);
+      },
+      true
+    );
+
+    document.addEventListener(
+      "dblclick",
+      function (e) {
+        var term = e.target.closest(".gloss-term");
+        if (!term) return;
+        e.preventDefault();
+        if (glossClickTimer) {
+          clearTimeout(glossClickTimer);
+          glossClickTimer = null;
+        }
+        closeGlossPopover();
+        var href = term.getAttribute("href");
+        if (href) window.location.href = href;
+      },
+      true
+    );
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeGlossPopover();
+    });
+
+    window.addEventListener("scroll", closeGlossPopover, true);
+    window.addEventListener("resize", closeGlossPopover);
+    window.addEventListener("yf-lang-change", closeGlossPopover);
+  }
+
+  initGlossaryInteraction();
+
   function paintUi(root, fmtMap) {
     (root || document).querySelectorAll("[data-ui]").forEach(function (el) {
       var key = el.getAttribute("data-ui");
@@ -731,6 +844,8 @@
     glossaryCategoryLabel: glossaryCategoryLabel,
     paintUi: paintUi,
     initGlossaryBack: initGlossaryBack,
+    initGlossaryInteraction: initGlossaryInteraction,
+    closeGlossPopover: closeGlossPopover,
     resolveGlossaryReturn: resolveGlossaryReturn,
   };
 })();
