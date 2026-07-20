@@ -490,10 +490,46 @@ a.gloss-term {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 0.15em;
+  position: relative;
+  cursor: help;
 }
 a.gloss-term:hover {
   text-decoration-style: solid;
   background: rgba(17, 94, 89, 0.08);
+}
+a.gloss-term::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.45rem);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(22rem, 88vw);
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  background: #134e4a;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: start;
+  white-space: pre-line;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s ease, visibility 0.12s ease;
+  z-index: 60;
+}
+html[dir="rtl"] a.gloss-term::after {
+  text-align: right;
+  line-height: 1.85;
+}
+a.gloss-term:hover::after,
+a.gloss-term:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Glossary page */

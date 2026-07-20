@@ -134,6 +134,30 @@
   }
 
   var glossaryEntries = null;
+  var glossaryById = null;
+
+  function getGlossaryById() {
+    if (glossaryById) return glossaryById;
+    var d = data();
+    glossaryById = {};
+    if (d && d.glossary && d.glossary.terms) {
+      d.glossary.terms.forEach(function (t) {
+        glossaryById[t.id] = t;
+      });
+    }
+    return glossaryById;
+  }
+
+  function termMeaning(id) {
+    var t = getGlossaryById()[id];
+    return t ? L(t.meaning) : "";
+  }
+
+  function termPairLabel(id) {
+    var t = getGlossaryById()[id];
+    if (!t) return "";
+    return t.en + " · " + t.fa;
+  }
 
   function escapeRegex(s) {
     return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -223,11 +247,16 @@
     var pos = 0;
     replacements.forEach(function (r) {
       result += s.slice(pos, r.start);
+      var meaning = termMeaning(r.id);
+      var pair = termPairLabel(r.id);
+      var tip = pair ? pair + "\n" + meaning : meaning;
       result +=
         '<a class="gloss-term" href="glossary.html#glossary-' +
         esc(r.id) +
-        '" title="' +
-        esc(ui("glossaryMeaningLabel")) +
+        '" data-tip="' +
+        esc(tip) +
+        '" aria-label="' +
+        esc(pair ? pair + ": " + meaning : meaning) +
         '">' +
         r.text +
         "</a>";
