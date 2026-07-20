@@ -13,6 +13,7 @@
       <a href="index.html" class="active" data-ui="navStart">Start</a>
       <a href="story.html" data-ui="navStory">Cargo story</a>
       <a href="roles.html" data-ui="navRoles">By role</a>
+      <a href="glossary.html" data-ui="navGlossary">Glossary</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Language">
       <button type="button" data-lang-btn="en">EN</button>
@@ -24,17 +25,21 @@
     <section class="hero" id="hero"></section>
 
     <h3 style="margin:1.5rem 0 0.5rem" data-ui="lifecycleHeading"></h3>
-    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem" data-ui="lifecycleHint"></p>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem" data-ui="lifecycleHint" data-glossary></p>
     <div class="lifecycle" id="lifecycle"></div>
 
     <div class="hub-grid">
       <a class="hub-card" href="story.html">
         <h3 data-ui="hubStoryTitle"></h3>
-        <p data-ui="hubStoryBody"></p>
+        <p data-ui="hubStoryBody" data-glossary></p>
       </a>
       <a class="hub-card" href="roles.html">
         <h3 data-ui="hubRoleTitle"></h3>
-        <p data-ui="hubRoleBody"></p>
+        <p data-ui="hubRoleBody" data-glossary></p>
+      </a>
+      <a class="hub-card" href="glossary.html">
+        <h3 data-ui="hubGlossaryTitle"></h3>
+        <p data-ui="hubGlossaryBody" data-glossary></p>
       </a>
     </div>
 
@@ -50,18 +55,14 @@
 
       function paint() {
         var d = Y.data();
-        document.querySelectorAll("[data-ui]").forEach(function (el) {
-          var key = el.getAttribute("data-ui");
-          if (key === "lifecycleHeading" || key === "lifecycleHint") {
-            el.textContent = Y.fmt(Y.ui(key), { total: d.lifecycle.length });
-          } else {
-            el.textContent = Y.ui(key);
-          }
+        Y.paintUi(document, {
+          lifecycleHeading: { total: d.lifecycle.length },
+          lifecycleHint: { total: d.lifecycle.length },
         });
         var m = d.meta;
         document.getElementById("hero").innerHTML =
-          "<h2>" + Y.esc(Y.L(m.title)) + "</h2>" +
-          "<p>" + Y.esc(Y.L(m.premise)) + "</p>" +
+          "<h2>" + Y.glossaryHtml(Y.L(m.title)) + "</h2>" +
+          "<p>" + Y.glossaryHtml(Y.L(m.premise)) + "</p>" +
           '<a class="start" href="story.html">' + Y.esc(Y.ui("startStory")) + "</a>";
         Y.renderLifecycle(document.getElementById("lifecycle"));
         document.getElementById("footnote").textContent = Y.localizeDigits(

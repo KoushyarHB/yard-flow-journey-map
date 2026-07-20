@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:27:16.772Z",
+  "generatedAt": "2026-07-20T10:45:16.546Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -16,6 +16,10 @@
     "navRoles": {
       "en": "By role",
       "fa": "بر اساس نقش"
+    },
+    "navGlossary": {
+      "en": "Glossary",
+      "fa": "واژه‌نامه"
     },
     "langEn": {
       "en": "English",
@@ -60,6 +64,14 @@
     "hubRoleBody": {
       "en": "Supervisor, control office, depot tallyman, guidance, gate, vessel tally, terminal — each sees only the chapters they live.",
       "fa": "سرشیفت، دفتر کنترل، بارشمار دپو، راهبری، حراست، بارشمار کشتی و ترمینال — هر کدام فقط فصل‌های خودش را می‌بیند."
+    },
+    "hubGlossaryTitle": {
+      "en": "3. Domain glossary",
+      "fa": "۳. واژه‌نامه دامنه"
+    },
+    "hubGlossaryBody": {
+      "en": "English term, Persian label, and business meaning for Kotaj, depot, Bijak, gate security, and every other domain word used in the story.",
+      "fa": "اصطلاح انگلیسی، معادل فارسی و معنای دقیق کوتاژ، دپو، بیجک، حراست و هر واژه دامنه‌ای که در داستان به کار رفته است."
     },
     "storyIntro": {
       "en": "Read top to bottom. Each chapter is a usage beat: scene → why → physical yard → software actions → rules → done when → then the screens for that beat. ★ marks chapters where frontend build order disagrees with runtime business order.",
@@ -140,6 +152,50 @@
     "rolesPageTitle": {
       "en": "A day in the yard — by role",
       "fa": "یک روز در محوطه، بر اساس نقش"
+    },
+    "glossaryPageTitle": {
+      "en": "Domain glossary",
+      "fa": "واژه‌نامه دامنه"
+    },
+    "glossaryIntro": {
+      "en": "English term, Persian label used in Yard Flow, and the business meaning in this export-yard operation. Click any highlighted term in the story to jump here.",
+      "fa": "اصطلاح انگلیسی، معادل فارسی به‌کاررفته در Yard Flow و معنای دقیق همان واژه در عملیات انبار صادرات. روی هر واژه برجسته در داستان کلیک کنید تا به همین صفحه بروید."
+    },
+    "glossarySearchPlaceholder": {
+      "en": "Search terms…",
+      "fa": "جست‌وجوی واژه…"
+    },
+    "glossaryEnLabel": {
+      "en": "English",
+      "fa": "انگلیسی"
+    },
+    "glossaryFaLabel": {
+      "en": "Persian",
+      "fa": "فارسی"
+    },
+    "glossaryMeaningLabel": {
+      "en": "Business meaning",
+      "fa": "معنای کسب‌وکار"
+    },
+    "glossarySourceLabel": {
+      "en": "Source",
+      "fa": "منبع"
+    },
+    "glossarySourceDomain": {
+      "en": "Domain analysis v6.1",
+      "fa": "تحلیل دامنه نسخه ۶.۱"
+    },
+    "glossarySourceWeb": {
+      "en": "Web clarification (not in domain doc)",
+      "fa": "توضیح تکمیلی وب (در سند دامنه نبود)"
+    },
+    "glossaryAllCategories": {
+      "en": "All categories",
+      "fa": "همه دسته‌ها"
+    },
+    "glossaryCount": {
+      "en": "{count} terms",
+      "fa": "{count} واژه"
     },
     "emptyDash": {
       "en": "—",
@@ -2217,5 +2273,2049 @@
       ]
     }
   ],
+  "glossary": {
+    "categories": [
+      {
+        "id": "actor",
+        "label": {
+          "en": "Actors & roles",
+          "fa": "بازیگران و نقش‌ها"
+        }
+      },
+      {
+        "id": "order",
+        "label": {
+          "en": "Orders & items",
+          "fa": "سفارش و آیتم"
+        }
+      },
+      {
+        "id": "inbound",
+        "label": {
+          "en": "Inbound & BOL",
+          "fa": "ورود و بارنامه"
+        }
+      },
+      {
+        "id": "yard",
+        "label": {
+          "en": "Yard & depot",
+          "fa": "محوطه و دپو"
+        }
+      },
+      {
+        "id": "vessel",
+        "label": {
+          "en": "Vessel & customs",
+          "fa": "شناور و گمرک"
+        }
+      },
+      {
+        "id": "loading",
+        "label": {
+          "en": "Loading & Bijak",
+          "fa": "بارگیری و بیجک"
+        }
+      },
+      {
+        "id": "status",
+        "label": {
+          "en": "System statuses",
+          "fa": "وضعیت‌های سامانه"
+        }
+      },
+      {
+        "id": "report",
+        "label": {
+          "en": "Reports & reconciliation",
+          "fa": "گزارش و تطبیق"
+        }
+      },
+      {
+        "id": "system",
+        "label": {
+          "en": "System concepts",
+          "fa": "مفاهیم سامانه"
+        }
+      }
+    ],
+    "terms": [
+      {
+        "id": "order-confirmation",
+        "en": "Order Confirmation",
+        "fa": "Order Confirmation",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "تأیید سفارش",
+          "سفارش صادراتی"
+        ],
+        "meaning": {
+          "en": "Initial export order document created before cargo reaches Bandar Abbas. It defines order number, customer, destination, product family, and item rows.",
+          "fa": "سند اولیه سفارش صادراتی که قبل از ورود کالا به بندرعباس ثبت می‌شود. شماره سفارش، مشتری، مقصد، خانواده محصول و ردیف آیتم‌ها را مشخص می‌کند."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "order-item",
+        "en": "Order Item",
+        "fa": "آیتم سفارش",
+        "aliasesEn": [
+          "item row"
+        ],
+        "aliasesFa": [
+          "ردیف سفارش",
+          "آیتم"
+        ],
+        "meaning": {
+          "en": "A line inside an order, separated by technical properties such as thickness, width, length, quality, and tonnage. Inbound BOLs and releases always attach to a specific item.",
+          "fa": "ردیف جزئی از سفارش که بر اساس ضخامت، عرض، طول، کیفیت و تناژ تفکیک می‌شود. بارنامه ورودی و آزادسازی همیشه به یک آیتم مشخص وصل می‌شوند."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "product-family",
+        "en": "Product Family",
+        "fa": "خانواده محصول",
+        "aliasesEn": [
+          "slab",
+          "coil",
+          "sheet"
+        ],
+        "aliasesFa": [
+          "اسلب",
+          "رول",
+          "کویل",
+          "ورق"
+        ],
+        "meaning": {
+          "en": "Product group such as slab, roll/coil, or sheet/plate. Used in order headers and operational filtering.",
+          "fa": "گروه محصول مثل اسلب، رول/کویل یا ورق/شیت. در سربرگ سفارش و فیلترهای عملیاتی به کار می‌رود."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "product-unit",
+        "en": "Product Unit",
+        "fa": "واحد محصول",
+        "aliasesEn": [
+          "product ID",
+          "identification number"
+        ],
+        "aliasesFa": [
+          "شماره شناسایی",
+          "قطعه",
+          "محموله"
+        ],
+        "meaning": {
+          "en": "One physically traceable piece of steel in the yard, identified by a unique 8- or 9-digit product ID. Inventory, selection, release, Bijak, and vessel receipt all operate on product units.",
+          "fa": "یک قطعه فیزیکی قابل‌ردیابی در محوطه با شماره شناسایی یکتا (۸ یا ۹ رقم). موجودی، انتخاب، آزادسازی، بیجک و تحویل کشتی همگی روی واحد محصول انجام می‌شوند."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "bol",
+        "en": "Bill of Lading (BOL)",
+        "fa": "بارنامه",
+        "aliasesEn": [
+          "BOL",
+          "road receipt",
+          "rail receipt"
+        ],
+        "aliasesFa": [
+          "رسید جاده‌ای",
+          "رسید ریلی"
+        ],
+        "meaning": {
+          "en": "Transport document that arrives with the truck or wagon from Isfahan. Its weight is authoritative for inventory; Packing List weight is comparative only.",
+          "fa": "سند حملی که با کامیون یا واگن از اصفهان می‌رسد. وزن مندرج در آن مبنای موجودی است؛ وزن Packing List فقط برای مقایسه است."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "position-number",
+        "en": "Position / BOL Number",
+        "fa": "شماره موقعیت",
+        "aliasesEn": [
+          "BOL number"
+        ],
+        "aliasesFa": [
+          "شماره بارنامه"
+        ],
+        "meaning": {
+          "en": "Tracking number on the inbound document used for receipt proof and mismatch checks with Mobarakeh.",
+          "fa": "شماره پیگیری روی سند ورودی برای اثبات رسید و بررسی مغایرت با فولاد مبارکه."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "depot",
+        "en": "Depot",
+        "fa": "دپو",
+        "aliasesEn": [
+          "yard location",
+          "depot letter"
+        ],
+        "aliasesFa": [
+          "محل دپو",
+          "جانمایی",
+          "حرف دپو"
+        ],
+        "meaning": {
+          "en": "Physical storage area inside the export yard where product units are placed after inbound receipt. Often labeled A, B, C, etc.",
+          "fa": "محل فیزیکی نگهداری کالا در محوطه انبار صادرات پس از ورود. معمولاً با حروفی مثل A، B و C نام‌گذاری می‌شود."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "export-warehouse",
+        "en": "Export Warehouse",
+        "fa": "انبار صادرات",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "محوطه",
+          "انبار صادرات بندرعباس",
+          "محوطه انبار"
+        ],
+        "meaning": {
+          "en": "Mobarakeh Steel export yard in Bandar Abbas where export cargo is received, stored, selected, and loaded.",
+          "fa": "محوطه انبار صادرات فولاد مبارکه در بندرعباس؛ جایی که کالا دریافت، نگهداری، انتخاب و بارگیری می‌شود."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "yard-selection",
+        "en": "Yard Selection",
+        "fa": "انتخاب محوطه",
+        "aliasesEn": [
+          "yard select",
+          "selectable products"
+        ],
+        "aliasesFa": [
+          "انتخاب از دپو",
+          "کالای قابل انتخاب"
+        ],
+        "meaning": {
+          "en": "Operational step where exact product IDs are claimed from free yard stock, physically verified, and color-marked before release.",
+          "fa": "مرحله‌ای که قطعات واقعی با شماره شناسایی از موجودی آزاد انتخاب، از نظر فیزیکی تأیید و رنگ‌زنی می‌شوند؛ پیش از آزادسازی نهایی."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "release",
+        "en": "Release",
+        "fa": "آزادسازی",
+        "aliasesEn": [
+          "release plan",
+          "released to vessel"
+        ],
+        "aliasesFa": [
+          "طرح آزادسازی",
+          "آزادشده برای شناور"
+        ],
+        "meaning": {
+          "en": "Logical allocation of verified product units to a specific vessel, voyage, and Kotaj. Cargo stays physically in the depot; release is not gate exit.",
+          "fa": "تخصیص منطقی قطعات تأییدشده به یک شناور، سفر و کوتاژ مشخص. کالا فیزیکاً هنوز در دپو است؛ آزادسازی با خروج از انبار یکی نیست."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "kotaj",
+        "en": "Kotaj / Customs Declaration No.",
+        "fa": "کوتاژ",
+        "aliasesEn": [
+          "export permit",
+          "customs declaration"
+        ],
+        "aliasesFa": [
+          "اظهار گمرکی",
+          "مجوز صادرات",
+          "شماره کوتاژ"
+        ],
+        "meaning": {
+          "en": "Customs declaration number tied to a vessel/barge loading operation. Required context for release and truck authorization.",
+          "fa": "شماره اظهار گمرکی مربوط به عملیات بارگیری شناور یا بارج. بدون آن آزادسازی و مجازکردن کامیون معنا ندارد."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "vessel",
+        "en": "Vessel / Barge",
+        "fa": "شناور",
+        "aliasesEn": [
+          "ship",
+          "barge"
+        ],
+        "aliasesFa": [
+          "کشتی",
+          "بارج"
+        ],
+        "meaning": {
+          "en": "Ship or barge that will receive the released export cargo at the quay.",
+          "fa": "کشتی یا بارجی که قرار است بار آزادشده را در اسکله دریافت کند."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "voyage",
+        "en": "Voyage",
+        "fa": "سفر شناور",
+        "aliasesEn": [
+          "vessel voyage"
+        ],
+        "aliasesFa": [
+          "سفر",
+          "Voyage"
+        ],
+        "meaning": {
+          "en": "A specific loading trip of a vessel, with destination and loading window. Trucks and releases are scoped to a voyage.",
+          "fa": "یک عملیات بارگیری مشخص برای شناور با مقصد و بازه زمانی. کامیون‌ها و آزادسازی‌ها به همین سفر محدود می‌شوند."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "hold",
+        "en": "Ship Hold",
+        "fa": "Hold",
+        "aliasesEn": [
+          "hold"
+        ],
+        "aliasesFa": [
+          "انبار کشتی",
+          "هولد"
+        ],
+        "meaning": {
+          "en": "Internal compartment of the vessel where cargo is stowed. Vessel tally selects the hold when confirming receipt.",
+          "fa": "بخش داخلی کشتی که کالا داخل آن تخلیه می‌شود. بارشمار کشتی هنگام تأیید تحویل، Hold را انتخاب می‌کند."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "color-mark",
+        "en": "Operational Color Mark",
+        "fa": "رنگ عملیاتی",
+        "aliasesEn": [
+          "color marking",
+          "operational color"
+        ],
+        "aliasesFa": [
+          "رنگ‌زنی",
+          "رنگ محصول",
+          "علامت رنگی"
+        ],
+        "meaning": {
+          "en": "Physical spray color applied after yard selection so loaders, gate, and vessel tally can distinguish items. Not the factory mark.",
+          "fa": "رنگ فیزیکی که پس از انتخاب محوطه روی کالا زده می‌شود تا باربر، حراست و بارشمار کشتی آن را تشخیص دهند. با علامت کارخانه فرق دارد."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "guidance-unit",
+        "en": "Guidance Unit",
+        "fa": "واحد راهبری",
+        "aliasesEn": [
+          "fleet guidance",
+          "truck assignment"
+        ],
+        "aliasesFa": [
+          "راهبری",
+          "تخصیص کامیون"
+        ],
+        "meaning": {
+          "en": "Unit that registers trucks and drivers and activates them only for a specific vessel/voyage/Kotaj window.",
+          "fa": "واحدی که کامیون و راننده را ثبت می‌کند و فقط برای شناور، سفر و کوتاژ مشخص مجاز می‌کند."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "depot-tallyman",
+        "en": "Depot Tallyman",
+        "fa": "بارشمار پای دپو",
+        "aliasesEn": [
+          "depot tally"
+        ],
+        "aliasesFa": [
+          "بارشمار دپو"
+        ],
+        "meaning": {
+          "en": "Operator at the depot face who loads the correct product unit onto an approved truck and issues a depot receipt.",
+          "fa": "اپراتوری که کنار دپو کالای درست را روی کامیون مجاز بار می‌زند و رسید پای دپو صادر می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "depot-receipt",
+        "en": "Depot Receipt",
+        "fa": "رسید پای دپو",
+        "aliasesEn": [
+          "depot tally receipt",
+          "loading receipt"
+        ],
+        "aliasesFa": [
+          "رسید بارگیری",
+          "شماره رسید"
+        ],
+        "meaning": {
+          "en": "Receipt issued after product unit and approved truck are matched at the depot. Required before control office can issue Bijak.",
+          "fa": "رسیدی که پس از تطبیق واحد محصول و کامیون مجاز در پای دپو صادر می‌شود. بدون آن دفتر کنترل نمی‌تواند بیجک بدهد."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "bijak",
+        "en": "Bijak",
+        "fa": "بیجک",
+        "aliasesEn": [
+          "loading ticket",
+          "colored ticket"
+        ],
+        "aliasesFa": [
+          "برگه بارگیری",
+          "بیجک رنگی"
+        ],
+        "meaning": {
+          "en": "Multi-copy colored operational ticket that controls cargo movement from depot through warehouse gate to vessel. Each copy goes to a different actor.",
+          "fa": "برگه عملیاتی چندرنگ که حرکت کالا را از دپو تا درب انبار و پای کشتی کنترل می‌کند. هر نسخه به یک نقش مشخص می‌رسد."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "bijak-closing",
+        "en": "Ticket Closing / Reconciliation",
+        "fa": "بستن بیجک",
+        "aliasesEn": [
+          "shift close",
+          "ticket reconciliation"
+        ],
+        "aliasesFa": [
+          "تطبیق بیجک",
+          "پایان شیفت"
+        ],
+        "meaning": {
+          "en": "End-of-shift process to count physical Bijaks, compare with system output, and close or flag discrepancies.",
+          "fa": "فرایند پایان شیفت برای شمارش بیجک‌های فیزیکی، مقایسه با خروجی سامانه و بستن یا ثبت مغایرت."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "yard-supervisor",
+        "en": "Yard Shift Supervisor",
+        "fa": "سرشیفت محوطه",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "سرشیفت"
+        ],
+        "meaning": {
+          "en": "Validates inbound BOL, checks destination and order/item, and assigns depot placement at the yard gate.",
+          "fa": "بارنامه ورودی را کنترل می‌کند، مقصد و سفارش/آیتم را می‌سنجد و محل دپو را در درب محوطه تعیین می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "control-office",
+        "en": "Control Office",
+        "fa": "دفتر کنترل",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "کنترل"
+        ],
+        "meaning": {
+          "en": "Registers inbound BOLs, confirms releases, issues Bijak, and is the paper-and-system bridge between depot and gate.",
+          "fa": "بارنامه‌های ورودی را ثبت می‌کند، آزادسازی را تأیید می‌کند، بیجک صادر می‌کند و حلقه اتصال کاغذ و سامانه میان دپو و درب است."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "gate-security",
+        "en": "Warehouse Gate Security",
+        "fa": "حراست درب انبار",
+        "aliasesEn": [
+          "gate security",
+          "gate exit"
+        ],
+        "aliasesFa": [
+          "حراست",
+          "درب انبار",
+          "خروج نهایی"
+        ],
+        "meaning": {
+          "en": "Final warehouse checkpoint: matches cargo, product ID, color, and plate to Bijak, then records final gate exit.",
+          "fa": "آخرین نقطه کنترل انبار: کالا، شماره شناسایی، رنگ و پلاک را با بیجک تطبیق می‌دهد و خروج نهایی را ثبت می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "special-zone-security",
+        "en": "Special Zone Security",
+        "fa": "حراست منطقه ویژه",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Receives the yellow/special-zone Bijak copy when the truck leaves the special economic zone toward the quay.",
+          "fa": "نسخه زرد یا مخصوص منطقه ویژه بیجک را هنگام خروج کامیون از منطقه ویژه به سمت اسکله دریافت می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "vessel-tallyman",
+        "en": "Vessel Tallyman",
+        "fa": "بارشمار کشتی",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "بارشمار پای کشتی"
+        ],
+        "meaning": {
+          "en": "Confirms Bijak, product ID, and color at the quay and records vessel receipt into a ship hold.",
+          "fa": "در اسکله بیجک، شماره شناسایی و رنگ را کنترل می‌کند و تحویل کالا را در Hold کشتی ثبت می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "terminal-unit",
+        "en": "Terminal Unit",
+        "fa": "واحد ترمینال",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "ترمینال"
+        ],
+        "meaning": {
+          "en": "Reviews previous-day Bijaks, reconciles counts with system output, and archives or escalates discrepancies.",
+          "fa": "بیجک‌های روز قبل را بررسی می‌کند، آمار را با خروجی سامانه تطبیق می‌دهد و مغایرت‌ها را پیگیری یا بایگانی می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "mobarakeh-expert",
+        "en": "Mobarakeh Order Expert",
+        "fa": "کارشناس فولاد مبارکه",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Provides or confirms Order Confirmation data from Mobarakeh Steel before cargo arrives at Bandar Abbas.",
+          "fa": "اطلاعات Order Confirmation را از فولاد مبارکه قبل از رسیدن کالا به بندرعباس اعلام یا تأیید می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "packing-list",
+        "en": "Packing List",
+        "fa": "Packing List",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "فهرست بسته‌بندی",
+          "پکینگ لیست"
+        ],
+        "meaning": {
+          "en": "Optional comparative document with row-level product details. Its weight must not override authoritative BOL weight.",
+          "fa": "سند اختیاری مقایسه‌ای با جزئیات ردیفی کالا. وزن آن نباید جایگزین وزن معتبر بارنامه شود."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "reconciliation",
+        "en": "Reconciliation",
+        "fa": "تطبیق",
+        "aliasesEn": [
+          "shift reconciliation"
+        ],
+        "aliasesFa": [
+          "تطبیق شیفت",
+          "تطبیق روزانه"
+        ],
+        "meaning": {
+          "en": "Structured comparison of issued Bijaks, gate exits, and vessel receipts for a date/shift/vessel.",
+          "fa": "مقایسه ساختاریافته بیجک‌های صادرشده، خروج‌های انبار و تحویل‌های کشتی برای یک تاریخ، شیفت یا شناور."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "discrepancy",
+        "en": "Discrepancy",
+        "fa": "مغایرت",
+        "aliasesEn": [
+          "mismatch"
+        ],
+        "aliasesFa": [
+          "اختلاف",
+          "ناسازگاری"
+        ],
+        "meaning": {
+          "en": "Recorded operational mismatch such as Bijak issued but not exited, exited but not vessel-received, or wrong product/color.",
+          "fa": "ناسازگاری عملیاتی ثبت‌شده مثل بیجک صادرشده بدون خروج، خروج بدون تحویل کشتی، یا کالا/رنگ اشتباه."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "in-transit",
+        "en": "In Transit to Vessel",
+        "fa": "در مسیر",
+        "aliasesEn": [
+          "in transit",
+          "gate exited not received"
+        ],
+        "aliasesFa": [
+          "خارج از انبار ولی تحویل‌کشتی‌نشده",
+          "کامیون در مسیر"
+        ],
+        "meaning": {
+          "en": "Derived reporting state: truck has gate-exited but vessel tally has not yet confirmed receipt. Not a separate inventory bucket.",
+          "fa": "وضعیت گزارشی مشتق‌شده: کامیون از انبار خارج شده اما بارشمار کشتی هنوز تحویل را تأیید نکرده است. موجودی جداگانه نیست."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §78–88"
+        }
+      },
+      {
+        "id": "master-data",
+        "en": "Master Data",
+        "fa": "داده‌های پایه",
+        "aliasesEn": [
+          "reference data"
+        ],
+        "aliasesFa": [
+          "اطلاعات پایه"
+        ],
+        "meaning": {
+          "en": "Reference entities such as vessels, warehouses, drivers, trucks, and depot locations maintained by admins.",
+          "fa": "موجودیت‌های مرجع مثل شناور، انبار، راننده، کامیون و محل دپو که توسط ادمین نگهداری می‌شوند."
+        },
+        "category": "system",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "arvand",
+        "en": "Arvand Export System",
+        "fa": "سامانه اروند",
+        "aliasesEn": [
+          "Arvand",
+          "Arvand Export Yard"
+        ],
+        "aliasesFa": [
+          "اروند صادرات",
+          "اروند"
+        ],
+        "meaning": {
+          "en": "Operational name of the export yard system at Bandar Abbas; YardFlow is the product/repository name for this domain.",
+          "fa": "نام عملیاتی سامانه انبار صادرات در بندرعباس؛ YardFlow نام محصول/مخزن پیاده‌سازی همین دامنه است."
+        },
+        "category": "system",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "yardflow",
+        "en": "YardFlow",
+        "fa": "YardFlow",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Short product name for the export yard and vessel-loading management system covering the full operational cycle.",
+          "fa": "نام کوتاه محصول برای سامانه مدیریت محوطه صادرات و بارگیری شناور در کل چرخه عملیاتی."
+        },
+        "category": "system",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "heat-no",
+        "en": "Heat Number",
+        "fa": "Heat No",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "شماره ذوب"
+        ],
+        "meaning": {
+          "en": "Melting batch identifier that may appear on Packing List rows for slab-level traceability.",
+          "fa": "شناسه شارژ ذوب که ممکن است در ردیف‌های Packing List برای ردیابی اسلب دیده شود."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "tonnage",
+        "en": "Tonnage / Quantity",
+        "fa": "تناژ",
+        "aliasesEn": [
+          "quantity",
+          "weight"
+        ],
+        "aliasesFa": [
+          "مقدار",
+          "وزن"
+        ],
+        "meaning": {
+          "en": "Ordered or received quantity; operational inventory uses kilograms internally even if documents show MT.",
+          "fa": "مقدار سفارش یا رسید؛ در عملیات داخلی معمولاً کیلوگرم ذخیره می‌شود حتی اگر سند با تن نمایش دهد."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "rail-wagon",
+        "en": "Rail Wagon",
+        "fa": "واگن",
+        "aliasesEn": [
+          "wagon",
+          "rail inbound"
+        ],
+        "aliasesFa": [
+          "ورود ریلی",
+          "حمل ریلی"
+        ],
+        "meaning": {
+          "en": "Rail transport inbound path; wagon number replaces truck plate and no driver details are required.",
+          "fa": "مسیر ورود ریلی؛ به‌جای پلاک کامیون شماره واگن ثبت می‌شود و اطلاعات راننده لازم نیست."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "flatbed-truck",
+        "en": "Flatbed Truck",
+        "fa": "کفی",
+        "aliasesEn": [
+          "flatbed"
+        ],
+        "aliasesFa": [
+          "کامیون کفی"
+        ],
+        "meaning": {
+          "en": "Truck type used for the ~20–30 minute shuttle between export yard and vessel quay.",
+          "fa": "نوع کامیونی که برای جابه‌جایی حدود بیست تا سی دقیقه‌ای میان انبار و اسکله استفاده می‌شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "crane",
+        "en": "Quay Crane",
+        "fa": "کرین",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "جرثقیل اسکله"
+        ],
+        "meaning": {
+          "en": "Crane at the quay used to unload product units from truck into the vessel hold.",
+          "fa": "جرثقیل اسکله که کالا را از کامیون به داخل Hold کشتی تخلیه می‌کند."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "special-zone",
+        "en": "Special Economic Zone",
+        "fa": "منطقه ویژه",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Zone between warehouse gate and quay; yellow Bijak copy may be handed to special-zone security on exit.",
+          "fa": "محدوده میان درب انبار و اسکله؛ ممکن است نسخه زرد بیجک هنگام خروج به حراست منطقه ویژه داده شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "shift",
+        "en": "Shift",
+        "fa": "شیفت",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Operational time bucket for daily control, Bijak closing, and reconciliation reporting.",
+          "fa": "بازه زمانی عملیاتی برای کنترل روزانه، بستن بیجک و گزارش تطبیق."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "driver-payment",
+        "en": "Driver Payment Eligibility",
+        "fa": "استحقاق پرداخت راننده",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Freight payment status is separate from cargo lifecycle; it becomes eligible after vessel receipt confirmation.",
+          "fa": "وضعیت پرداخت کرایه راننده جدا از چرخه عمر کالاست و پس از تأیید تحویل در کشتی مجاز می‌شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §78–88"
+        }
+      },
+      {
+        "id": "overdue-confirmation",
+        "en": "Confirmation Overdue",
+        "fa": "تأیید دیرکرد",
+        "aliasesEn": [
+          "overdue",
+          "SLA breach"
+        ],
+        "aliasesFa": [
+          "دیرکرد",
+          "تأخیر تأیید کشتی"
+        ],
+        "meaning": {
+          "en": "Truck journey state when vessel tally confirmation exceeds the allowed SLA after gate exit.",
+          "fa": "وضعیت سفر کامیون وقتی تأیید بارشمار کشتی بعد از خروج از انبار از مهلت مجاز عقب بیفتد."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §78–88"
+        }
+      },
+      {
+        "id": "status-expected",
+        "en": "ExpectedFromOrder",
+        "fa": "کالای مورد انتظار",
+        "aliasesEn": [
+          "ExpectedFromOrder"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product unit is on the order but has not yet been received at the yard.",
+          "fa": "واحد محصول در سفارش ثبت شده اما هنوز به محوطه نرسیده است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-received",
+        "en": "ReceivedInWarehouse",
+        "fa": "دریافت‌شده در انبار",
+        "aliasesEn": [
+          "ReceivedInWarehouse"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Inbound BOL has been registered and the product unit exists in the system.",
+          "fa": "بارنامه ورودی ثبت شده و واحد محصول در سامانه ایجاد شده است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-available",
+        "en": "AvailableInYard",
+        "fa": "موجود در محوطه",
+        "aliasesEn": [
+          "AvailableInYard",
+          "free stock"
+        ],
+        "aliasesFa": [
+          "موجودی آزاد"
+        ],
+        "meaning": {
+          "en": "Product unit is in the depot as free stock, not yet selected or released.",
+          "fa": "واحد محصول در دپو به‌صورت موجودی آزاد است و هنوز انتخاب یا آزادسازی نشده."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-yard-selected",
+        "en": "YardSelected",
+        "fa": "انتخاب‌شده در محوطه",
+        "aliasesEn": [
+          "YardSelected"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product unit is claimed in an active yard selection workflow.",
+          "fa": "واحد محصول در یک انتخاب محوطه فعال ادعا شده است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-verified",
+        "en": "PhysicallyVerified",
+        "fa": "تأیید فیزیکی‌شده",
+        "aliasesEn": [
+          "PhysicallyVerified"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Operator has physically confirmed the product unit matches the selection.",
+          "fa": "اپراتور از نظر فیزیکی تأیید کرده که کالا با انتخاب می‌خواند."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-color-marked",
+        "en": "ColorMarked",
+        "fa": "رنگ‌خورده",
+        "aliasesEn": [
+          "ColorMarked"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Operational color has been applied and verified on the product unit.",
+          "fa": "رنگ عملیاتی روی واحد محصول اجرا و تأیید شده است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-released",
+        "en": "ReleasedToVessel",
+        "fa": "آزادشده برای شناور",
+        "aliasesEn": [
+          "ReleasedToVessel"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product unit is logically allocated to a vessel/voyage but still physically in the depot.",
+          "fa": "واحد محصول از نظر منطقی به شناور/سفر تخصیص یافته اما هنوز فیزیکاً در دپو است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-bijak",
+        "en": "BijakAllocated",
+        "fa": "تخصیص‌یافته به بیجک",
+        "aliasesEn": [
+          "BijakAllocated"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product unit is tied to an issued Bijak and active truck journey.",
+          "fa": "واحد محصول به بیجک صادرشده و سفر کامیون فعال وصل شده است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-gate-exited",
+        "en": "GateExited",
+        "fa": "خروج از درب انبار",
+        "aliasesEn": [
+          "GateExited"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Final warehouse exit recorded; cargo is in transit toward the quay.",
+          "fa": "خروج نهایی از انبار ثبت شده و کالا در مسیر اسکله است."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-vessel-received",
+        "en": "VesselReceived",
+        "fa": "تحویل‌شده به کشتی",
+        "aliasesEn": [
+          "VesselReceived"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Vessel tally confirmed receipt into a ship hold; truck journey can close.",
+          "fa": "بارشمار کشتی تحویل در Hold را تأیید کرده و سفر کامیون می‌تواند بسته شود."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "status-closed",
+        "en": "Closed",
+        "fa": "بسته‌شده",
+        "aliasesEn": [
+          "Closed"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Unit or Bijak is reconciled and no longer open in operational workflows.",
+          "fa": "واحد محصول یا بیجک تطبیق شده و در جریان‌های عملیاتی باز نیست."
+        },
+        "category": "status",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §9"
+        }
+      },
+      {
+        "id": "bijak-green-copy",
+        "en": "Green Bijak Copy",
+        "fa": "نسخه سبز بیجک",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Copy for driver/freight purposes in the multi-copy Bijak set.",
+          "fa": "نسخه مربوط به راننده/کرایه در مجموعه چندرنگ بیجک."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
+        }
+      },
+      {
+        "id": "bijak-white-copy",
+        "en": "White Bijak Copy",
+        "fa": "نسخه سفید بیجک",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Copy for vessel tally and end-of-shift reconciliation.",
+          "fa": "نسخه مربوط به بارشمار کشتی و تطبیق پایان شیفت."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
+        }
+      },
+      {
+        "id": "bijak-gate-copy",
+        "en": "Gate Security Copy",
+        "fa": "نسخه حراست انبار",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Copy retained by warehouse gate security when final exit is confirmed.",
+          "fa": "نسخه‌ای که حراست درب انبار هنگام تأیید خروج نهایی نگه می‌دارد."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
+        }
+      },
+      {
+        "id": "truck-journey",
+        "en": "Truck Service Journey",
+        "fa": "سفر کامیون",
+        "aliasesEn": [
+          "journey",
+          "truck run"
+        ],
+        "aliasesFa": [
+          "سفر سرویس",
+          "مسیر کامیون"
+        ],
+        "meaning": {
+          "en": "Lifecycle of one truck run from depot loading through gate exit to vessel confirmation or overdue.",
+          "fa": "چرخه عمر یک سرویس کامیون از بارگیری در دپو تا خروج از انبار و تأیید کشتی یا دیرکرد."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §78–88"
+        }
+      },
+      {
+        "id": "inventory",
+        "en": "Inventory",
+        "fa": "موجودی",
+        "aliasesEn": [
+          "stock"
+        ],
+        "aliasesFa": [
+          "گزارش موجودی"
+        ],
+        "meaning": {
+          "en": "Reportable view of product units by order, item, depot, status, and vessel context.",
+          "fa": "نمای گزارش‌پذیر واحدهای محصول بر اساس سفارش، آیتم، دپو، وضعیت و زمینه شناور."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "loading-report",
+        "en": "Loading Report",
+        "fa": "گزارش بارگیری",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Operational report of what was released, ticketed, exited, and vessel-received per vessel/shift.",
+          "fa": "گزارش عملیاتی از آزادسازی، صدور بیجک، خروج و تحویل کشتی به تفکیک شناور یا شیفت."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "dashboard",
+        "en": "Operations Dashboard",
+        "fa": "داشبورد عملیات",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Shift supervisor view of yard inventory, in-transit trucks, overdue confirmations, and vessel progress.",
+          "fa": "نمای سرشیفت از موجودی محوطه، کامیون‌های در مسیر، تأییدهای دیرکرد و پیشرفت بارگیری شناورها."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "quality-grade",
+        "en": "Quality / Grade",
+        "fa": "کیفیت",
+        "aliasesEn": [
+          "quality",
+          "grade"
+        ],
+        "aliasesFa": [
+          "گرید"
+        ],
+        "meaning": {
+          "en": "Steel grade code on order items and inbound registration; used to match BOL to order item.",
+          "fa": "کد کیفیت یا گرید روی آیتم سفارش و ثبت ورودی؛ برای تطبیق بارنامه با آیتم به کار می‌رود."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "thickness",
+        "en": "Thickness (TKS)",
+        "fa": "ضخامت",
+        "aliasesEn": [
+          "TKS"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Technical dimension on order items; customers may load only one thickness first.",
+          "fa": "بعد فنی روی آیتم‌ها؛ گاهی مشتری ابتدا فقط یک ضخامت مشخص را بارگیری می‌کند."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "customer",
+        "en": "Export Customer",
+        "fa": "مشتری",
+        "aliasesEn": [
+          "buyer"
+        ],
+        "aliasesFa": [
+          "خریدار"
+        ],
+        "meaning": {
+          "en": "Owner of the export order; reports show order destination and loading status.",
+          "fa": "صاحب سفارش صادراتی؛ گزارش‌ها مقصد و وضعیت بارگیری سفارش را نشان می‌دهند."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "bandar-abbas",
+        "en": "Bandar Abbas Export Yard",
+        "fa": "بندرعباس",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "انبار صادرات بندرعباس"
+        ],
+        "meaning": {
+          "en": "Port city where Mobarakeh export cargo is received by road or rail before vessel loading.",
+          "fa": "بندری که کالای صادراتی فولاد مبارکه با جاده یا ریل دریافت می‌شود و پیش از بارگیری شناور نگهداری می‌گردد."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "isfahan-origin",
+        "en": "Isfahan Origin",
+        "fa": "اصفهان",
+        "aliasesEn": [
+          "Mobarakeh origin"
+        ],
+        "aliasesFa": [
+          "مبدا اصفهان",
+          "فولاد مبارکه"
+        ],
+        "meaning": {
+          "en": "Typical origin of inbound BOLs before cargo reaches the Bandar Abbas export yard.",
+          "fa": "مبدأ معمول بارنامه‌های ورودی پیش از رسیدن کالا به انبار صادرات بندرعباس."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "admin",
+        "en": "System Admin",
+        "fa": "ادمین سیستم",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "مدیر سیستم"
+        ],
+        "meaning": {
+          "en": "Maintains users, roles, permissions, and master data.",
+          "fa": "کاربران، نقش‌ها، دسترسی‌ها و داده‌های پایه را نگهداری می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "manager",
+        "en": "Operations Manager",
+        "fa": "مدیریت",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "مدیر عملیات"
+        ],
+        "meaning": {
+          "en": "Uses dashboards and reports for inventory, vessel loading, and operational KPIs.",
+          "fa": "از داشبورد و گزارش‌ها برای موجودی، بارگیری شناورها و شاخص‌های عملیاتی استفاده می‌کند."
+        },
+        "category": "actor",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "barcode-token",
+        "en": "Bijak Barcode / Token",
+        "fa": "بارکد بیجک",
+        "aliasesEn": [
+          "barcode",
+          "public token"
+        ],
+        "aliasesFa": [
+          "توکن",
+          "شناسه اسکن"
+        ],
+        "meaning": {
+          "en": "Machine-readable identifier on Bijak used for gate lookup, vessel tally mobile, and reconciliation.",
+          "fa": "شناسه قابل‌اسکن روی بیجک برای جست‌وجوی درب، پنل موبایل بارشمار کشتی و تطبیق."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §78–88"
+        }
+      },
+      {
+        "id": "ready-for-release",
+        "en": "Ready for Release",
+        "fa": "آماده آزادسازی",
+        "aliasesEn": [
+          "ReadyForRelease"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Yard selection passed physical verification and color marking; eligible to convert to a release plan.",
+          "fa": "انتخاب محوطه از تأیید فیزیکی و رنگ‌زنی عبور کرده و می‌تواند به طرح آزادسازی تبدیل شود."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "partial-delivery",
+        "en": "Partial Inbound Delivery",
+        "fa": "ورود تدریجی",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "به‌صورت خرد",
+          "چند نوبت"
+        ],
+        "meaning": {
+          "en": "One order may arrive over several days or weeks in multiple truck/wagon trips—not as a single shipment.",
+          "fa": "یک سفارش ممکن است طی چند روز یا چند هفته و در چند نوبت به انبار برسد، نه در یک محموله واحد."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "controlled-inventory",
+        "en": "Controlled Inventory",
+        "fa": "موجودی کنترل‌شده",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Reporting concept for stock that is allocated or in process—not the same as free AvailableInYard stock.",
+          "fa": "مفهوم گزارشی برای کالایی که تخصیص یافته یا در جریان عملیات است؛ با موجودی آزاد یکی نیست."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §10"
+        }
+      },
+      {
+        "id": "yard",
+        "en": "Export Yard",
+        "fa": "محوطه",
+        "aliasesEn": [
+          "yard",
+          "export yard"
+        ],
+        "aliasesFa": [
+          "محوطه انبار",
+          "انبار صادرات"
+        ],
+        "meaning": {
+          "en": "The Bandar Abbas export warehouse compound where steel is received, stored in depots, selected, and released before vessel loading.",
+          "fa": "مجموعه انبار صادرات بندرعباس که کالا در آن دریافت، در دپوها نگهداری، انتخاب و پیش از بارگیری شناور آزاد می‌شود."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "placement",
+        "en": "Depot Placement",
+        "fa": "جانمایی",
+        "aliasesEn": [
+          "yard placement",
+          "depot assignment"
+        ],
+        "aliasesFa": [
+          "تعیین محل دپو",
+          "جانمایی محموله"
+        ],
+        "meaning": {
+          "en": "Assigning a received product unit to a physical depot location (e.g. Export/A) at yard gate intake.",
+          "fa": "اختصاص واحد محصول دریافت‌شده به محل فیزیکی دپو (مثل Export/A) هنگام ورود از درب محوطه."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "release-no",
+        "en": "Release Number",
+        "fa": "شماره آزادسازی",
+        "aliasesEn": [
+          "Release No"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Internal identifier for a release plan that ties selected product units to vessel, voyage, and Kotaj.",
+          "fa": "شناسه داخلی طرح آزادسازی که واحدهای انتخاب‌شده را به شناور، سفر و کوتاژ وصل می‌کند."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "release-plan",
+        "en": "Release Plan",
+        "fa": "طرح آزادسازی",
+        "aliasesEn": [
+          "release document"
+        ],
+        "aliasesFa": [
+          "سند آزادسازی"
+        ],
+        "meaning": {
+          "en": "Formal allocation of verified yard stock to a specific vessel/voyage/Kotaj before Bijak can be issued.",
+          "fa": "تخصیص رسمی موجودی تأییدشده محوطه به یک شناور/سفر/کوتاژ مشخص، پیش از صدور بیجک."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "width",
+        "en": "Width",
+        "fa": "عرض",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Technical dimension on order items and inbound BOL; used to match cargo to the correct order item.",
+          "fa": "بعد فنی روی آیتم سفارش و بارنامه ورودی؛ برای تطبیق کالا با آیتم درست به کار می‌رود."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "length",
+        "en": "Length",
+        "fa": "طول",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Technical dimension on order items and inbound registration.",
+          "fa": "بعد فنی روی آیتم سفارش و ثبت ورودی."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "weight",
+        "en": "Weight / Tonnage",
+        "fa": "وزن",
+        "aliasesEn": [
+          "gross weight"
+        ],
+        "aliasesFa": [
+          "تناژ",
+          "وزن خالص"
+        ],
+        "meaning": {
+          "en": "Recorded weight on inbound BOL; basis for inventory reporting and steel-mill receipt proof.",
+          "fa": "وزن ثبت‌شده روی بارنامه ورودی؛ مبنای گزارش موجودی و اثبات رسید به فولاد مبارکه."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "truck-plate",
+        "en": "Truck Plate",
+        "fa": "پلاک کامیون",
+        "aliasesEn": [
+          "license plate",
+          "truck number"
+        ],
+        "aliasesFa": [
+          "شماره کامیون"
+        ],
+        "meaning": {
+          "en": "Road vehicle identifier required on truck inbound BOLs; used again at gate exit and guidance registration.",
+          "fa": "شناسه کامیون جاده‌ای که روی بارنامه ورودی لازم است و دوباره در خروج از درب و ثبت راهبری به کار می‌رود."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "driver",
+        "en": "Driver",
+        "fa": "راننده",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Person operating the flatbed truck; registered by guidance unit and linked to Bijak and gate exit.",
+          "fa": "راننده کامیون کفی؛ توسط واحد راهبری ثبت و به بیجک و خروج از درب وصل می‌شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "approved-truck",
+        "en": "Approved Truck",
+        "fa": "کامیون مجاز",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "کامیون فعال"
+        ],
+        "meaning": {
+          "en": "Truck and driver pair authorized by guidance for a specific vessel, voyage, and Kotaj.",
+          "fa": "جفت کامیون و راننده‌ای که واحد راهبری برای شناور، سفر و کوتاژ مشخص مجاز کرده است."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "quay",
+        "en": "Quay",
+        "fa": "اسکله",
+        "aliasesEn": [
+          "wharf"
+        ],
+        "aliasesFa": [
+          "پای کشتی"
+        ],
+        "meaning": {
+          "en": "Where flatbed trucks deliver released cargo for crane loading into the vessel hold.",
+          "fa": "محلی که کامیون‌های کفی بار آزادشده را برای بارگیری با کرین به Hold کشتی تحویل می‌دهند."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "barge",
+        "en": "Barge",
+        "fa": "بارج",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Smaller vessel type alongside ships; same release, Bijak, and loading workflow applies.",
+          "fa": "نوع شناور کوچک‌تر در کنار کشتی؛ همان جریان آزادسازی، بیجک و بارگیری برای آن هم برقرار است."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "slab",
+        "en": "Slab",
+        "fa": "اسلب",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product family for semi-finished steel slabs in export orders.",
+          "fa": "خانواده محصول برای اسلب‌های نیمه‌ساخته در سفارش‌های صادراتی."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "coil",
+        "en": "Coil / Roll",
+        "fa": "کویل",
+        "aliasesEn": [
+          "roll"
+        ],
+        "aliasesFa": [
+          "رول"
+        ],
+        "meaning": {
+          "en": "Product family for rolled steel coils.",
+          "fa": "خانواده محصول برای رول‌های فولادی."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "sheet",
+        "en": "Sheet / Plate",
+        "fa": "ورق",
+        "aliasesEn": [
+          "plate",
+          "sheet"
+        ],
+        "aliasesFa": [
+          "شیت"
+        ],
+        "meaning": {
+          "en": "Product family for flat steel sheets or plates.",
+          "fa": "خانواده محصول برای ورق یا شیت فولادی."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "destination",
+        "en": "Destination Port",
+        "fa": "مقصد",
+        "aliasesEn": [
+          "destination",
+          "discharge port"
+        ],
+        "aliasesFa": [
+          "بندر مقصد",
+          "مقصد صادراتی"
+        ],
+        "meaning": {
+          "en": "Export destination on the order and release; yard supervisor checks inbound BOL matches Bandar Abbas path.",
+          "fa": "مقصد صادراتی روی سفارش و آزادسازی؛ سرشیفت بررسی می‌کند بارنامه ورودی مسیر بندرعباس را دارد."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "order-no",
+        "en": "Order Number",
+        "fa": "شماره سفارش",
+        "aliasesEn": [
+          "Order No"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Primary key linking order confirmation, inbound BOLs, releases, and reports.",
+          "fa": "کلید اصلی که سفارش، بارنامه‌های ورودی، آزادسازی‌ها و گزارش‌ها را به هم وصل می‌کند."
+        },
+        "category": "order",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "inbound-registration",
+        "en": "Inbound Registration",
+        "fa": "ثبت ورودی",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "رسید اولیه",
+          "ثبت بارنامه"
+        ],
+        "meaning": {
+          "en": "Creating the product unit in the system from an inbound BOL at yard gate or control office.",
+          "fa": "ایجاد واحد محصول در سامانه بر اساس بارنامه ورودی در درب محوطه یا دفتر کنترل."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "gate-exit",
+        "en": "Final Gate Exit",
+        "fa": "خروج نهایی",
+        "aliasesEn": [
+          "warehouse exit",
+          "gate exit"
+        ],
+        "aliasesFa": [
+          "خروج از انبار",
+          "خروج از درب"
+        ],
+        "meaning": {
+          "en": "Last warehouse security checkpoint where Bijak is validated and cargo leaves toward the quay.",
+          "fa": "آخرین نقطه کنترل حراست انبار که بیجک در آن تأیید می‌شود و کالا به سمت اسکله خارج می‌شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "vessel-receipt",
+        "en": "Vessel Receipt",
+        "fa": "تحویل به کشتی",
+        "aliasesEn": [
+          "vessel confirmation",
+          "hold receipt"
+        ],
+        "aliasesFa": [
+          "ثبت در Hold",
+          "تأیید بارشمار کشتی"
+        ],
+        "meaning": {
+          "en": "Vessel tally confirms product unit is in the ship hold; closes the truck journey and enables driver payment eligibility.",
+          "fa": "بارشمار کشتی تأیید می‌کند واحد محصول داخل Hold است؛ سفر کامیون بسته می‌شود و استحقاق پرداخت راننده فعال می‌گردد."
+        },
+        "category": "vessel",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "bijak-yellow-copy",
+        "en": "Yellow Bijak Copy",
+        "fa": "نسخه زرد بیجک",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Copy handed to special-zone security when cargo exits the warehouse zone toward the quay.",
+          "fa": "نسخه‌ای که هنگام خروج کالا از محدوده انبار به سمت اسکله به حراست منطقه ویژه داده می‌شود."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §7.8–7.9"
+        }
+      },
+      {
+        "id": "factory-mark",
+        "en": "Factory Mark",
+        "fa": "علامت کارخانه",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "مارک کارخانه"
+        ],
+        "meaning": {
+          "en": "Permanent mill marking on steel—not the same as operational color applied after yard selection.",
+          "fa": "نشان دائمی کارخانه روی فولاد؛ با رنگ عملیاتی که پس از انتخاب محوطه زده می‌شود فرق دارد."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §6–7"
+        }
+      },
+      {
+        "id": "free-stock",
+        "en": "Free Stock",
+        "fa": "موجودی آزاد",
+        "aliasesEn": [
+          "available stock"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Product units physically in depot with AvailableInYard status—not yet selected or released.",
+          "fa": "واحدهای محصول فیزیکاً در دپو با وضعیت موجود در محوطه که هنوز انتخاب یا آزادسازی نشده‌اند."
+        },
+        "category": "yard",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "shift-report",
+        "en": "Shift Report",
+        "fa": "گزارش شیفت",
+        "aliasesEn": [],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "End-of-shift operational summary used by control office and terminal for Bijak closing and reconciliation.",
+          "fa": "خلاصه عملیاتی پایان شیفت که دفتر کنترل و ترمینال برای بستن بیجک و تطبیق از آن استفاده می‌کنند."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "archive",
+        "en": "Archive / Filing",
+        "fa": "بایگانی",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "بستن پرونده"
+        ],
+        "meaning": {
+          "en": "Terminal unit stores reconciled Bijak sets after discrepancy review.",
+          "fa": "واحد ترمینال پس از بررسی مغایرت، مجموعه بیجک‌های تطبیق‌شده را بایگانی می‌کند."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "role-permission",
+        "en": "Role & Permission",
+        "fa": "نقش و دسترسی",
+        "aliasesEn": [
+          "RBAC"
+        ],
+        "aliasesFa": [
+          "دسترسی‌ها"
+        ],
+        "meaning": {
+          "en": "Each actor sees only screens and actions for their yard role—mobile tally, gate, control office, etc.",
+          "fa": "هر بازیگر فقط صفحات و عملیات نقش خود را می‌بیند؛ بارشمار موبایل، درب، دفتر کنترل و غیره."
+        },
+        "category": "system",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "plate-reader",
+        "en": "License Plate Reader",
+        "fa": "پلاک‌خوان",
+        "aliasesEn": [
+          "ANPR",
+          "LPR"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Future integration at warehouse gate to auto-match truck plate to active Bijak.",
+          "fa": "یکپارچه‌سازی آینده در درب انبار برای تطبیق خودکار پلاک با بیجک فعال."
+        },
+        "category": "system",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "excel-export",
+        "en": "Excel / PDF Export",
+        "fa": "خروجی Excel",
+        "aliasesEn": [],
+        "aliasesFa": [
+          "خروجی PDF",
+          "گزارش اکسل"
+        ],
+        "meaning": {
+          "en": "Management reports exported for inventory, vessel loading progress, and KPI review.",
+          "fa": "گزارش‌های مدیریتی برای موجودی، پیشرفت بارگیری شناور و بررسی شاخص‌ها به صورت فایل خروجی."
+        },
+        "category": "report",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §4"
+        }
+      },
+      {
+        "id": "loading",
+        "en": "Loading (onto vessel)",
+        "fa": "بارگیری",
+        "aliasesEn": [
+          "vessel loading"
+        ],
+        "aliasesFa": [
+          "بارگیری شناور",
+          "بارزنی"
+        ],
+        "meaning": {
+          "en": "Physical transfer from depot truck journey through gate to quay crane and into vessel hold.",
+          "fa": "انتقال فیزیکی از سفر کامیون دپو، عبور از درب، تا کرین اسکله و داخل Hold کشتی."
+        },
+        "category": "loading",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      },
+      {
+        "id": "rail-inbound",
+        "en": "Rail Inbound",
+        "fa": "ورود ریلی",
+        "aliasesEn": [
+          "rail receipt"
+        ],
+        "aliasesFa": [],
+        "meaning": {
+          "en": "Inbound path where wagon number replaces truck plate; no driver details on BOL.",
+          "fa": "مسیر ورودی که شماره واگن جایگزین پلاک می‌شود و اطلاعات راننده در بارنامه نیست."
+        },
+        "category": "inbound",
+        "source": {
+          "type": "domain",
+          "ref": "yardflow_domain_analysis_v6.1.md §5"
+        }
+      }
+    ]
+  },
   "screenCount": 70
 }

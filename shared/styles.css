@@ -483,3 +483,88 @@ html[dir="ltr"] .done-prefix { font-weight: 700; color: var(--accent); }
 html[dir="rtl"] .done-prefix { font-weight: 700; color: var(--accent); }
 
 .done::before { content: none; }
+
+/* Glossary links in story text */
+a.gloss-term {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.15em;
+}
+a.gloss-term:hover {
+  text-decoration-style: solid;
+  background: rgba(17, 94, 89, 0.08);
+}
+
+/* Glossary page */
+.glossary-wrap { max-width: 52rem; }
+.glossary-intro {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.glossary-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.glossary-toolbar input,
+.glossary-toolbar select {
+  flex: 1 1 14rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--paper);
+}
+.glossary-count { margin-bottom: 1rem; font-size: 0.88rem; }
+.glossary-section { margin-bottom: 2rem; }
+.glossary-section h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+}
+.glossary-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 5rem;
+}
+.glossary-card.glossary-highlight {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(17, 94, 89, 0.15);
+}
+.glossary-head {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+.glossary-pair { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; align-items: baseline; }
+.glossary-k {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  min-width: 4.5rem;
+}
+.glossary-v { font-weight: 600; }
+.glossary-meaning { margin: 0.35rem 0; line-height: 1.75; font-size: 0.92rem; }
+.glossary-source { margin: 0.25rem 0 0; font-size: 0.8rem; }
+.glossary-web-note {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.65rem;
+  background: #fffbeb;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #92400e;
+}
+html[dir="rtl"] .glossary-k { text-transform: none; letter-spacing: 0; min-width: 3rem; }
+html[dir="rtl"] .glossary-intro,
+html[dir="rtl"] .glossary-meaning { text-align: right; line-height: 1.95; }

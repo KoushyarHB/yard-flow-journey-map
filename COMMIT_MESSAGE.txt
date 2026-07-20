@@ -1,3 +1,0 @@
-Render Persian prose with proper sentence punctuation.
-
-Replace bullet-style list rendering with sentence-based prose rendering and enforce one space after sentence-ending dots in Persian text.

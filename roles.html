@@ -13,6 +13,7 @@
       <a href="index.html" data-ui="navStart">Start</a>
       <a href="story.html" data-ui="navStory">Cargo story</a>
       <a href="roles.html" class="active" data-ui="navRoles">By role</a>
+      <a href="glossary.html" data-ui="navGlossary">Glossary</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Language">
       <button type="button" data-lang-btn="en">EN</button>
@@ -21,7 +22,7 @@
   </header>
 
   <main class="wrap">
-    <p style="color:var(--muted);margin-bottom:1.25rem" data-ui="rolesIntro"></p>
+    <p style="color:var(--muted);margin-bottom:1.25rem" data-ui="rolesIntro" data-glossary></p>
     <div id="roles"></div>
   </main>
 
@@ -33,9 +34,7 @@
       Y.initLangToggle();
 
       function paint() {
-        document.querySelectorAll("[data-ui]").forEach(function (el) {
-          el.textContent = Y.ui(el.getAttribute("data-ui"));
-        });
+        Y.paintUi(document);
         var d = Y.data();
         var root = document.getElementById("roles");
         root.innerHTML = "";
@@ -46,10 +45,10 @@
           var cares = Y.L(r.caresAbout);
           cares = Array.isArray(cares) ? cares.join(" · ") : cares;
           card.innerHTML =
-            "<h3>" + Y.esc(Y.L(r.title)) + "</h3>" +
-            '<p class="morning">' + Y.esc(Y.L(r.morning)) + "</p>" +
+            "<h3>" + Y.glossaryHtml(Y.L(r.title)) + "</h3>" +
+            '<p class="morning">' + Y.glossaryHtml(Y.L(r.morning)) + "</p>" +
             '<div class="links"></div>' +
-            '<p class="cares"><strong>' + Y.esc(Y.ui("caresAbout")) + "</strong> " + Y.esc(cares) + "</p>";
+            '<p class="cares"><strong>' + Y.esc(Y.ui("caresAbout")) + "</strong> " + Y.glossaryHtml(cares) + "</p>";
           var links = card.querySelector(".links");
           (r.chapterRefs || []).forEach(function (ch) {
             var a = document.createElement("a");

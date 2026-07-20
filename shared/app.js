@@ -133,11 +133,127 @@
     return s + ".";
   }
 
+  var glossaryEntries = null;
+
+  function escapeRegex(s) {
+    return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function buildGlossaryEntries() {
+    if (glossaryEntries) return glossaryEntries;
+    var d = data();
+    if (!d || !d.glossary || !d.glossary.terms) {
+      glossaryEntries = [];
+      return glossaryEntries;
+    }
+    var out = [];
+    d.glossary.terms.forEach(function (t) {
+      function add(phrase, lang) {
+        var p = String(phrase || "").trim();
+        if (p.length < 2) return;
+        out.push({ phrase: p, id: t.id, lang: lang, len: p.length });
+      }
+      add(t.en, "en");
+      add(t.fa, "fa");
+      (t.aliasesEn || []).forEach(function (a) {
+        add(a, "en");
+      });
+      (t.aliasesFa || []).forEach(function (a) {
+        add(a, "fa");
+      });
+    });
+    out.sort(function (a, b) {
+      return b.len - a.len;
+    });
+    glossaryEntries = out;
+    return glossaryEntries;
+  }
+
+  function phraseRegex(phrase, lang) {
+    if (lang === "fa") {
+      var parts = String(phrase)
+        .split("")
+        .map(function (c) {
+          return escapeRegex(c) + "\\u200c?";
+        });
+      return new RegExp(parts.join(""), "g");
+    }
+    return new RegExp(escapeRegex(phrase), "gi");
+  }
+
+  function linkGlossary(text) {
+    var raw = String(text == null ? "" : text);
+    if (!raw) return "";
+    var s = esc(raw);
+    var lang = getLang();
+    var entries = buildGlossaryEntries().filter(function (e) {
+      return e.lang === lang;
+    });
+    if (!entries.length) return s;
+
+    var used = new Array(s.length);
+    var i;
+    for (i = 0; i < used.length; i++) used[i] = false;
+
+    var replacements = [];
+    entries.forEach(function (e) {
+      var re = phraseRegex(e.phrase, lang);
+      var m;
+      while ((m = re.exec(s)) !== null) {
+        var start = m.index;
+        var end = start + m[0].length;
+        var overlap = false;
+        for (i = start; i < end; i++) {
+          if (used[i]) {
+            overlap = true;
+            break;
+          }
+        }
+        if (overlap) continue;
+        for (i = start; i < end; i++) used[i] = true;
+        replacements.push({ start: start, end: end, id: e.id, text: m[0] });
+      }
+    });
+
+    replacements.sort(function (a, b) {
+      return a.start - b.start;
+    });
+
+    var result = "";
+    var pos = 0;
+    replacements.forEach(function (r) {
+      result += s.slice(pos, r.start);
+      result +=
+        '<a class="gloss-term" href="glossary.html#glossary-' +
+        esc(r.id) +
+        '" title="' +
+        esc(ui("glossaryMeaningLabel")) +
+        '">' +
+        r.text +
+        "</a>";
+      pos = r.end;
+    });
+    result += s.slice(pos);
+    return result;
+  }
+
+  function glossaryHtml(text) {
+    return linkGlossary(formatLocalized(text));
+  }
+
   function listHtml(bilingualList) {
     var items = L(bilingualList);
     if (!items || !items.length) return "<p class='muted'>" + esc(ui("emptyDash")) + "</p>";
-    if (!Array.isArray(items)) return "<p class='sentence-list'>" + esc(ensureSentence(items)) + "</p>";
-    return "<p class='sentence-list'>" + esc(items.map(ensureSentence).join(" ")) + "</p>";
+    if (!Array.isArray(items)) return "<p class='sentence-list'>" + glossaryHtml(items) + "</p>";
+    return (
+      "<p class='sentence-list'>" +
+      items
+        .map(function (item) {
+          return glossaryHtml(ensureSentence(item));
+        })
+        .join(" ") +
+      "</p>"
+    );
   }
 
   var gallery = [];
@@ -209,27 +325,32 @@
       '<div class="kicker">' +
       esc(fmt(ui("chapterOf"), { n: ch.n, total: data().chapters.length })) +
       "</div>" +
-      "<h3>" + esc(L(ch.title)) + "</h3>" +
+      "<h3>" + glossaryHtml(L(ch.title)) + "</h3>" +
       '<div class="meta-row">' +
-      '<span class="chip">👤 ' + esc(L(ch.actor)) + "</span>" +
-      '<span class="chip setting">📍 ' + esc(L(ch.setting)) + "</span>" +
-      (ch.phaseHint ? '<span class="chip setting">' + esc(L(ch.phaseHint)) + "</span>" : "") +
+      '<span class="chip">👤 ' + glossaryHtml(L(ch.actor)) + "</span>" +
+      '<span class="chip setting">📍 ' + glossaryHtml(L(ch.setting)) + "</span>" +
+      (ch.phaseHint ? '<span class="chip setting">' + glossaryHtml(L(ch.phaseHint)) + "</span>" : "") +
       "</div></div>";
 
     var body = '<div class="chapter-body">';
-    body += '<p class="scene">' + esc(L(ch.scene)) + "</p>";
-    body += '<div class="why"><strong>' + esc(ui("whyLabel")) + "</strong><br/>" + esc(L(ch.whyItMatters)) + "</div>";
+    body += '<p class="scene">' + glossaryHtml(L(ch.scene)) + "</p>";
+    body +=
+      '<div class="why"><strong>' +
+      esc(ui("whyLabel")) +
+      "</strong><br/>" +
+      glossaryHtml(L(ch.whyItMatters)) +
+      "</div>";
 
     if (ch.critical && ch.criticalNote) {
       body +=
         '<div class="alert critical-alert"><strong>' +
         esc(ui("criticalLabel")) +
         "</strong><br/>" +
-        esc(L(ch.criticalNote)) +
+        glossaryHtml(L(ch.criticalNote)) +
         "</div>";
     }
     if (ch.parallelNote) {
-      body += '<div class="alert">' + esc(L(ch.parallelNote)) + "</div>";
+      body += '<div class="alert">' + glossaryHtml(L(ch.parallelNote)) + "</div>";
     }
 
     body += '<div class="grid-2">';
@@ -246,7 +367,7 @@
       '<div class="done"><span class="done-prefix">' +
       esc(ui("donePrefix")) +
       "</span>" +
-      esc(L(ch.doneWhen)) +
+      glossaryHtml(L(ch.doneWhen)) +
       "</div>";
 
     body +=
@@ -317,9 +438,9 @@
         esc(localizeDigits(i + 1 + "/" + total)) +
         "</span>" +
         "<b>" +
-        esc(L(step.plain)) +
+        glossaryHtml(L(step.plain)) +
         "</b>" +
-        esc(step.status);
+        glossaryHtml(L(step.status));
       row.appendChild(el);
     });
     container.appendChild(row);
@@ -372,6 +493,129 @@
     });
   }
 
+  function glossarySourceLabel(src) {
+    if (!src) return ui("glossarySourceDomain");
+    if (src.type === "web") return ui("glossarySourceWeb");
+    return ui("glossarySourceDomain");
+  }
+
+  function glossaryCategoryLabel(catId) {
+    var d = data();
+    if (!d || !d.glossary) return catId;
+    var cat = (d.glossary.categories || []).find(function (c) {
+      return c.id === catId;
+    });
+    return cat ? L(cat.label) : catId;
+  }
+
+  function renderGlossary(root, opts) {
+    var d = data();
+    if (!d || !d.glossary) return;
+    opts = opts || {};
+    var terms = d.glossary.terms || [];
+    var q = String(opts.query || "").trim().toLowerCase();
+    var cat = opts.category || "";
+
+    var filtered = terms.filter(function (t) {
+      if (cat && t.category !== cat) return false;
+      if (!q) return true;
+      var hay =
+        (t.en + " " + t.fa + " " + (t.aliasesEn || []).join(" ") + " " + (t.aliasesFa || []).join(" ") +
+        " " +
+        L(t.meaning)).toLowerCase();
+      return hay.indexOf(q) >= 0;
+    });
+
+    root.innerHTML = "";
+
+    var count = document.createElement("p");
+    count.className = "glossary-count muted";
+    count.textContent = fmt(ui("glossaryCount"), { count: filtered.length });
+    root.appendChild(count);
+
+    var byCat = {};
+    filtered.forEach(function (t) {
+      if (!byCat[t.category]) byCat[t.category] = [];
+      byCat[t.category].push(t);
+    });
+
+    (d.glossary.categories || []).forEach(function (catDef) {
+      var list = byCat[catDef.id];
+      if (!list || !list.length) return;
+
+      var section = document.createElement("section");
+      section.className = "glossary-section";
+      section.innerHTML = "<h3>" + esc(L(catDef.label)) + "</h3>";
+
+      list.forEach(function (t) {
+        var card = document.createElement("article");
+        card.className = "glossary-card";
+        card.id = "glossary-" + t.id;
+
+        var aliasesEn = (t.aliasesEn || []).length ? " · " + esc((t.aliasesEn || []).join(", ")) : "";
+        var aliasesFa = (t.aliasesFa || []).length ? " · " + esc((t.aliasesFa || []).join("، ")) : "";
+        var srcNote =
+          t.source && t.source.type === "web" && t.source.note
+            ? '<p class="glossary-web-note">' + esc(L(t.source.note)) + "</p>"
+            : "";
+
+        card.innerHTML =
+          '<div class="glossary-head">' +
+          '<div class="glossary-pair"><span class="glossary-k">' +
+          esc(ui("glossaryEnLabel")) +
+          '</span><span class="glossary-v">' +
+          esc(t.en) +
+          aliasesEn +
+          "</span></div>" +
+          '<div class="glossary-pair"><span class="glossary-k">' +
+          esc(ui("glossaryFaLabel")) +
+          '</span><span class="glossary-v">' +
+          esc(t.fa) +
+          aliasesFa +
+          "</span></div>" +
+          "</div>" +
+          '<p class="glossary-meaning"><strong>' +
+          esc(ui("glossaryMeaningLabel")) +
+          ":</strong> " +
+          glossaryHtml(L(t.meaning)) +
+          "</p>" +
+          '<p class="glossary-source muted"><strong>' +
+          esc(ui("glossarySourceLabel")) +
+          ":</strong> " +
+          esc(glossarySourceLabel(t.source)) +
+          (t.source && t.source.ref ? " — " + esc(t.source.ref) : "") +
+          "</p>" +
+          srcNote;
+
+        section.appendChild(card);
+      });
+
+      root.appendChild(section);
+    });
+
+    var hash = (opts.hash || location.hash || "").replace(/^#/, "");
+    if (hash) {
+      var target = document.getElementById(hash);
+      if (target) {
+        target.classList.add("glossary-highlight");
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }
+
+  function paintUi(root, fmtMap) {
+    (root || document).querySelectorAll("[data-ui]").forEach(function (el) {
+      var key = el.getAttribute("data-ui");
+      var text = ui(key);
+      if (fmtMap && fmtMap[key]) text = fmt(text, fmtMap[key]);
+      if (el.hasAttribute("data-glossary")) {
+        el.innerHTML = glossaryHtml(text);
+      } else {
+        el.textContent = text;
+      }
+    });
+  }
+
   window.YardStory = {
     data: data,
     esc: esc,
@@ -391,5 +635,10 @@
     initPictureMode: initPictureMode,
     openLb: openLb,
     listHtml: listHtml,
+    glossaryHtml: glossaryHtml,
+    linkGlossary: linkGlossary,
+    renderGlossary: renderGlossary,
+    glossaryCategoryLabel: glossaryCategoryLabel,
+    paintUi: paintUi,
   };
 })();

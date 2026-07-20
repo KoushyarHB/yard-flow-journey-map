@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glossary — Yard Flow</title>
+  <link rel="stylesheet" href="shared/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 data-ui="glossaryPageTitle"></h1>
+    <nav class="pills">
+      <a href="index.html" data-ui="navStart">Start</a>
+      <a href="story.html" data-ui="navStory">Cargo story</a>
+      <a href="roles.html" data-ui="navRoles">By role</a>
+      <a href="glossary.html" class="active" data-ui="navGlossary">Glossary</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en">EN</button>
+      <button type="button" data-lang-btn="fa">فا</button>
+    </div>
+  </header>
+
+  <main class="wrap glossary-wrap">
+    <p class="glossary-intro" data-ui="glossaryIntro" data-glossary></p>
+
+    <div class="glossary-toolbar">
+      <input type="search" id="glossary-search" autocomplete="off" />
+      <select id="glossary-category" aria-label="Category"></select>
+    </div>
+
+    <div id="glossary-root"></div>
+  </main>
+
+  <script src="shared/data.js"></script>
+  <script src="shared/app.js"></script>
+  <script>
+    (function () {
+      var Y = YardStory;
+      Y.initLangToggle();
+
+      var searchEl = document.getElementById("glossary-search");
+      var catEl = document.getElementById("glossary-category");
+
+      function paintChrome() {
+        Y.paintUi(document);
+        searchEl.placeholder = Y.ui("glossarySearchPlaceholder");
+        document.title =
+          Y.getLang() === "fa" ? "واژه‌نامه — Yard Flow" : "Glossary — Yard Flow";
+      }
+
+      function paintCategories() {
+        var d = Y.data();
+        var val = catEl.value;
+        catEl.innerHTML = "";
+        var all = document.createElement("option");
+        all.value = "";
+        all.textContent = Y.ui("glossaryAllCategories");
+        catEl.appendChild(all);
+        (d.glossary.categories || []).forEach(function (c) {
+          var opt = document.createElement("option");
+          opt.value = c.id;
+          opt.textContent = Y.glossaryCategoryLabel(c.id);
+          catEl.appendChild(opt);
+        });
+        catEl.value = val || "";
+      }
+
+      function paintGlossary() {
+        Y.renderGlossary(document.getElementById("glossary-root"), {
+          query: searchEl.value,
+          category: catEl.value,
+          hash: location.hash,
+        });
+      }
+
+      function paint() {
+        paintChrome();
+        paintCategories();
+        paintGlossary();
+      }
+
+      searchEl.addEventListener("input", paintGlossary);
+      catEl.addEventListener("change", paintGlossary);
+      window.addEventListener("hashchange", paintGlossary);
+
+      paint();
+      window.addEventListener("yf-lang-change", paint);
+    })();
+  </script>
+</body>
+</html>
