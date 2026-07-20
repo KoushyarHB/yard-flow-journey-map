@@ -188,7 +188,6 @@
         linkChapter.classList.toggle("is-unavailable", !showChapter);
         linkChapter.setAttribute("aria-hidden", showChapter ? "false" : "true");
         linkChapter.tabIndex = showChapter ? 0 : -1;
-        linkChapter.style.display = showChapter ? "" : "none";
       }
       btnPrev.disabled = pathIndex <= 0;
       btnNext.disabled = pathIndex >= path.length - 1;
