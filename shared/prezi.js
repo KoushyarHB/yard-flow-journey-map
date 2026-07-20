@@ -160,12 +160,13 @@
       }
       if (linkChapter) {
         var f = frameById[currentId];
-        if (f && f.kind === "chapter") {
+        var showChapter = !!(f && f.kind === "chapter");
+        if (showChapter) {
           linkChapter.href = "story.html#" + f.id;
-          linkChapter.hidden = false;
-        } else {
-          linkChapter.hidden = true;
         }
+        linkChapter.classList.toggle("is-unavailable", !showChapter);
+        linkChapter.setAttribute("aria-hidden", showChapter ? "false" : "true");
+        linkChapter.tabIndex = showChapter ? 0 : -1;
       }
       btnPrev.disabled = pathIndex <= 0;
       btnNext.disabled = pathIndex >= path.length - 1;
