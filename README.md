@@ -26,6 +26,6 @@ node docs/proposals/yard-flow/_tooling/build-pages-deploy.mjs
 - **Cargo story** — 12 chapters from order to ship
 - **By role** — supervisor, control office, gate, etc.
 - **Glossary** — bilingual domain terms (Kotaj, depot, Bijak, gate security, …)
-- **Domain model** — entities, relationships, inventory buckets, backend modules
+- **Domain model** — full domain analysis v6.1 (EN / FA, ~4000 lines each)
 
 Language toggle: EN / فا (top right). Farsi uses Yekan Bakh; English uses Roboto — same fonts as the TMS app.

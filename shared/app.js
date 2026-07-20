@@ -816,110 +816,58 @@
   initGlossaryInteraction();
 
   function renderDomainModels(root) {
-    var d = data();
-    if (!d || !d.domainModel) return;
-    var dm = d.domainModel;
+    var dm = window.DOMAIN_MODEL;
+    if (!dm || !dm.languages) {
+      root.innerHTML = "<p class='muted'>" + esc(ui("emptyDash")) + "</p>";
+      return;
+    }
+    var lang = getLang();
+    var doc = dm.languages[lang] || dm.languages.en;
     root.innerHTML = "";
 
-    var intro = document.createElement("p");
-    intro.className = "models-intro";
-    intro.innerHTML = glossaryHtml(L(dm.meta.intro));
-    root.appendChild(intro);
+    var note = document.createElement("p");
+    note.className = "models-intro";
+    note.textContent = ui("modelsFullDocNote");
+    root.appendChild(note);
 
-    var source = document.createElement("p");
-    source.className = "models-source muted";
-    source.textContent = L(dm.meta.source);
-    root.appendChild(source);
+    var meta = document.createElement("p");
+    meta.className = "models-source muted";
+    meta.textContent =
+      doc.source +
+      " · " +
+      fmt(ui("modelsLineCount"), { count: doc.lineCount, toc: doc.toc.length });
+    root.appendChild(meta);
 
-    (dm.sections || []).forEach(function (sec) {
-      var section = document.createElement("section");
-      section.className = "models-section";
-      section.id = "models-" + sec.id;
-      var html = "<h3>" + esc(L(sec.title)) + "</h3>";
-      if (sec.body) html += "<p class='models-section-body'>" + glossaryHtml(L(sec.body)) + "</p>";
-      if (sec.items && sec.items.length) {
-        html += "<ul class='models-list'>";
-        sec.items.forEach(function (item) {
-          var text = typeof item === "string" ? item : L(item);
-          html += "<li>" + glossaryHtml(text) + "</li>";
-        });
-        html += "</ul>";
-      }
-      section.innerHTML = html;
-      root.appendChild(section);
-    });
+    var layout = document.createElement("div");
+    layout.className = "domain-layout";
 
-    var invSec = document.createElement("section");
-    invSec.className = "models-section";
-    invSec.innerHTML = "<h3>" + esc(ui("modelsInvariantsHeading")) + "</h3><ul class='models-list'></ul>";
-    var invList = invSec.querySelector(".models-list");
-    (dm.invariants || []).forEach(function (item) {
+    var tocNav = document.createElement("nav");
+    tocNav.className = "domain-toc";
+    tocNav.setAttribute("aria-label", ui("modelsTocHeading"));
+    tocNav.innerHTML = "<h4>" + esc(ui("modelsTocHeading")) + "</h4><ul></ul>";
+    var tocUl = tocNav.querySelector("ul");
+    (doc.toc || []).forEach(function (item) {
       var li = document.createElement("li");
-      li.innerHTML = glossaryHtml(L(item));
-      invList.appendChild(li);
-    });
-    root.appendChild(invSec);
-
-    var entHead = document.createElement("h3");
-    entHead.className = "models-entities-heading";
-    entHead.textContent = ui("modelsEntitiesHeading");
-    root.appendChild(entHead);
-
-    var byGroup = {};
-    (dm.entities || []).forEach(function (e) {
-      if (!byGroup[e.group]) byGroup[e.group] = [];
-      byGroup[e.group].push(e);
+      li.className = "toc-l" + item.level;
+      var a = document.createElement("a");
+      a.href = "#" + item.id;
+      a.textContent = item.title;
+      li.appendChild(a);
+      tocUl.appendChild(li);
     });
 
-    (dm.entityGroups || []).forEach(function (g) {
-      var list = byGroup[g.id];
-      if (!list || !list.length) return;
+    var article = document.createElement("article");
+    article.className = "domain-doc";
+    article.innerHTML = doc.html;
 
-      var groupSec = document.createElement("section");
-      groupSec.className = "models-entity-group";
-      groupSec.innerHTML = "<h4>" + esc(L(g.label)) + "</h4>";
+    layout.appendChild(tocNav);
+    layout.appendChild(article);
+    root.appendChild(layout);
 
-      var table = document.createElement("table");
-      table.className = "models-table";
-      table.innerHTML =
-        "<thead><tr><th>" +
-        esc(ui("glossaryEnLabel")) +
-        "</th><th>" +
-        esc(ui("modelsPurposeCol")) +
-        "</th><th>" +
-        esc(ui("modelsKeysCol")) +
-        "</th></tr></thead>";
-      var tbody = document.createElement("tbody");
-
-      list.forEach(function (e) {
-        var tr = document.createElement("tr");
-        var nameCell =
-          e.glossaryId
-            ? '<a class="gloss-term" href="' +
-              esc(glossaryHrefForTerm(e.glossaryId)) +
-              '" data-term-id="' +
-              esc(e.glossaryId) +
-              '" data-tip="' +
-              esc(termPairLabel(e.glossaryId) + "\n" + termMeaning(e.glossaryId)) +
-              '">' +
-              esc(L(e.name)) +
-              "</a>"
-            : esc(L(e.name));
-        tr.innerHTML =
-          "<td class='models-name'>" +
-          nameCell +
-          "</td><td>" +
-          glossaryHtml(L(e.purpose)) +
-          "</td><td class='models-keys'><code>" +
-          esc(L(e.keys)) +
-          "</code></td>";
-        tbody.appendChild(tr);
-      });
-
-      table.appendChild(tbody);
-      groupSec.appendChild(table);
-      root.appendChild(groupSec);
-    });
+    if (location.hash) {
+      var target = document.getElementById(location.hash.replace(/^#/, ""));
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   function paintUi(root, fmtMap) {
