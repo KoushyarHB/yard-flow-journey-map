@@ -266,8 +266,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--muted); margin-bottom: 0.45rem;
 }
-.block ul { padding-left: 1.1rem; color: var(--ink); font-size: 0.92rem; list-style: disc; }
-.block li { margin: 0.3rem 0; display: list-item; }
+.sentence-list { color: var(--ink); font-size: 0.92rem; line-height: 1.9; }
 
 .done {
   margin: 1rem 0;
@@ -439,8 +438,7 @@ html[dir="rtl"] .why {
   border-right: 3px solid var(--accent);
   border-radius: 10px 0 0 10px;
 }
-html[dir="rtl"] .block ul { padding-left: 0; padding-right: 1.1rem; list-style-type: disc; }
-html[dir="rtl"] .block li { display: list-item; margin: 0.35rem 0; }
+html[dir="rtl"] .sentence-list { line-height: 2; }
 html[dir="rtl"] .done::before { content: none; }
 html[dir="rtl"] .scene,
 html[dir="rtl"] .why,
@@ -465,7 +463,7 @@ html[dir="rtl"] .scene { font-size: 0.98rem; line-height: 2; }
 html[dir="rtl"] .why,
 html[dir="rtl"] .alert,
 html[dir="rtl"] .done,
-html[dir="rtl"] .block ul,
+html[dir="rtl"] .sentence-list,
 html[dir="rtl"] .tools-note,
 html[dir="rtl"] .role-card .morning {
   font-size: 0.9rem;

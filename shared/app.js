@@ -64,7 +64,7 @@
       });
   }
 
-  /** Persian typography: space after ، ؛ and no space before . ؟ ! */
+  /** Persian typography: exactly one space after sentence-ending dot, no space before punctuation */
   function normalizeFaPunctuation(value) {
     if (getLang() !== "fa") return value;
     if (Array.isArray(value)) {
@@ -74,6 +74,7 @@
     }
     return String(value == null ? "" : value)
       .replace(/\s+([.؟!])/g, "$1")
+      .replace(/\.([^\s.\n])/g, ". $1")
       .replace(/([،؛:])(?=[^\s])/g, "$1 ")
       .replace(/ {2,}/g, " ")
       .trim();
@@ -125,11 +126,18 @@
       .replace(/"/g, "&quot;");
   }
 
+  function ensureSentence(text) {
+    var s = String(text == null ? "" : text).trim();
+    if (!s) return "";
+    if (/[.؟!]$/.test(s)) return s;
+    return s + ".";
+  }
+
   function listHtml(bilingualList) {
     var items = L(bilingualList);
     if (!items || !items.length) return "<p class='muted'>" + esc(ui("emptyDash")) + "</p>";
-    if (!Array.isArray(items)) return "<p>" + esc(items) + "</p>";
-    return "<ul>" + items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
+    if (!Array.isArray(items)) return "<p class='sentence-list'>" + esc(ensureSentence(items)) + "</p>";
+    return "<p class='sentence-list'>" + esc(items.map(ensureSentence).join(" ")) + "</p>";
   }
 
   var gallery = [];
