@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:17:02.733Z",
+  "generatedAt": "2026-07-20T10:19:11.917Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -99,7 +99,7 @@
     },
     "userDoesLabel": {
       "en": "What the user does in software",
-      "fa": "کاربر در نرم‌افزار چه می‌کند"
+      "fa": "در نرم‌افزار چکار کنید؟"
     },
     "systemLabel": {
       "en": "What the system records",
