@@ -27,5 +27,6 @@ node docs/proposals/yard-flow/_tooling/build-pages-deploy.mjs
 - **By role** — supervisor, control office, gate, etc.
 - **Glossary** — bilingual domain terms (Kotaj, depot, Bijak, gate security, …)
 - **Domain model** — full domain analysis v6.1 (EN / FA, ~4000 lines each)
+- **Flow tour** — Prezi-style zoom through overview → 12 chapters → finale
 
 Language toggle: EN / فا (top right). Farsi uses Yekan Bakh; English uses Roboto — same fonts as the TMS app.

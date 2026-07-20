@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T11:58:00.291Z",
+  "generatedAt": "2026-07-20T12:11:06.646Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -24,6 +24,10 @@
     "navModels": {
       "en": "Domain model",
       "fa": "مدل دامنه"
+    },
+    "navPrezi": {
+      "en": "Flow tour",
+      "fa": "تور جریان"
     },
     "langEn": {
       "en": "English",
@@ -84,6 +88,42 @@
     "hubModelsBody": {
       "en": "Full domain analysis v6.1 — all 88 sections, entities, flows, rules, and reports (EN / FA).",
       "fa": "تحلیل کامل دامنه نسخه ۶.۱ — تمام ۸۸ بخش، موجودیت‌ها، جریان‌ها، قواعد و گزارش‌ها (انگلیسی / فارسی)."
+    },
+    "hubPreziTitle": {
+      "en": "5. Flow tour",
+      "fa": "۵. تور جریان"
+    },
+    "hubPreziBody": {
+      "en": "Prezi-style zoom through the business: overview → 12 steps → vessel. Click, arrow keys, or Next.",
+      "fa": "مرور زوم‌شونده کسب‌وکار: نمای کلی → ۱۲ گام → کشتی. کلیک، کلید جهت‌دار یا Next."
+    },
+    "preziPageTitle": {
+      "en": "Business flow tour",
+      "fa": "تور جریان کسب‌وکار"
+    },
+    "preziOverview": {
+      "en": "Overview",
+      "fa": "نمای کلی"
+    },
+    "preziPrev": {
+      "en": "Previous",
+      "fa": "قبلی"
+    },
+    "preziNext": {
+      "en": "Next",
+      "fa": "بعدی"
+    },
+    "preziReadChapter": {
+      "en": "Open full chapter →",
+      "fa": "باز کردن فصل کامل ←"
+    },
+    "preziStepOf": {
+      "en": "Step {n} of {total}",
+      "fa": "گام {n} از {total}"
+    },
+    "preziHint": {
+      "en": "Scroll zoom disabled — use Next/Previous or click a card. Esc = overview.",
+      "fa": "زوم اسکرول غیرفعال است — از Next/Previous یا کلیک روی کارت استفاده کنید. Esc = نمای کلی."
     },
     "storyIntro": {
       "en": "Read top to bottom. Each chapter is a usage beat: scene → why → physical yard → software actions → rules → done when → then the screens for that beat. ★ marks chapters where frontend build order disagrees with runtime business order.",
@@ -246,8 +286,8 @@
       "fa": "فهرست"
     },
     "modelsLineCount": {
-      "en": "{count} lines · {toc} sections in TOC",
-      "fa": "{count} خط · {toc} بخش در فهرست"
+      "en": "{lines} source lines · {sections} sections",
+      "fa": "{lines} خط منبع · {sections} بخش"
     },
     "modelsFullDocNote": {
       "en": "Full domain analysis v6.1 — all sections from the source document.",
@@ -4477,6 +4517,388 @@
         },
         "link": true
       }
+    ]
+  },
+  "prezi": {
+    "meta": {
+      "title": {
+        "en": "One product unit from Mobarakeh to the vessel",
+        "fa": "مسیر یک واحد محصول از مبارکه تا کشتی"
+      },
+      "premise": {
+        "en": "Mobarakeh Steel has no sea port. Export steel travels by road or rail to the Bandar Abbas export yard. YardFlow (Arvand) must keep every physical piece traceable from Order Confirmation until it is confirmed in a ship hold — so wrong loading, theft, Bijak mismatches, and freight disputes drop.",
+        "fa": "فولاد مبارکه بندر ندارد. کالای صادراتی با جاده یا ریل به انبار صادرات بندرعباس می‌رسد. سامانه YardFlow (اروند) باید هر قطعه فیزیکی را از Order Confirmation تا تأیید در Hold کشتی ردیابی کند تا بارگیری اشتباه، سرقت، مغایرت بیجک و اختلاف کرایه کاهش یابد."
+      },
+      "canvas": {
+        "width": 4400,
+        "height": 3300
+      },
+      "center": {
+        "x": 2200,
+        "y": 1650
+      }
+    },
+    "frames": [
+      {
+        "id": "overview",
+        "kind": "hub",
+        "x": 1880,
+        "y": 1430,
+        "w": 640,
+        "h": 440,
+        "title": {
+          "en": "The whole journey at a glance",
+          "fa": "کل مسیر در یک نگاه"
+        },
+        "body": {
+          "en": "Click a step on the ring, use Next, or press arrow keys. Each zoom is one chapter of the cargo story.",
+          "fa": "روی هر گام حلقه کلیک کنید، Next بزنید یا از کلید جهت‌دار استفاده کنید. هر زوم یک فصل از داستان کالاست."
+        }
+      },
+      {
+        "id": "ch-01-order",
+        "kind": "chapter",
+        "chapterN": 1,
+        "x": 1920,
+        "y": 400,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Before anything arrives: the order must exist",
+          "fa": "پیش از رسیدن بار: سفارش را مبنای کار قرار دهید"
+        },
+        "actor": {
+          "en": "Order operator (with Mobarakeh expert data)",
+          "fa": "اپراتور سفارش با اطلاعات کارشناس فولاد مبارکه"
+        },
+        "hook": {
+          "en": "Steel is already sold. Production follows the buyer’s technical sheet. The document that starts Arvand’s world is the Order Confirmation: order number, customer, destination, product family, and item rows (thickness, width, length, quality, tonnage).",
+          "fa": "کار از جایی شروع می‌شود که فروش قطعی شده و برای مشتری Order Confirmation صادر شده است. این سند مشخص می‌کند چه کالایی، با چه مشخصاتی و برای کدام مقصد باید از انبار صادرات بندرعباس خارج شود. هر سفارش چند آیتم دارد و آیتم‌ها از نظر ضخامت، عرض، طول، کیفیت و تناژ ممکن است با هم متفاوت باشند."
+        },
+        "done": {
+          "en": "A confirmed order with items exists, ready for trucks/wagons to match against.",
+          "fa": "سفارش و آیتم‌های آن تأیید شده‌اند و دفتر کنترل می‌تواند بار ورودی را به آن‌ها تطبیق دهد."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-02-receiving",
+        "kind": "chapter",
+        "chapterN": 2,
+        "x": 2445,
+        "y": 540.6733260263394,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "A truck (or wagon) arrives: make inventory real",
+          "fa": "ورود به انبار صادرات: بارنامه را کنترل و کالا را جانمایی کنید"
+        },
+        "actor": {
+          "en": "Yard shift supervisor, then control office operator",
+          "fa": "سرشیفت محوطه و اپراتور دفتر کنترل"
+        },
+        "hook": {
+          "en": "A road truck arrives with a bill of lading from Isfahan. The supervisor checks destination (must be Bandar Abbas export yard), checks that the order/item exists, and decides the depot letter (A, B, C…). Cargo is unloaded. BOL copies go to the driver and to control office. Control office registers the product ID, weight, dimensions, and depot in the system.",
+          "fa": "کامیون با بارنامه اصفهان به درب انبار می‌رسد. سرشیفت ابتدا مقصد، سفارش و آیتم را کنترل می‌کند و سپس محل دپو را تعیین می‌کند. پس از تخلیه، نسخه‌ای از بارنامه به دفتر کنترل می‌رسد تا مشخصات کالا، شماره شناسایی، وزن و محل دپو در سامانه ثبت شود. در ورود ریلی هم منطق کلی همین است؛ فقط به‌جای پلاک و مشخصات راننده، شماره واگن ثبت می‌شود."
+        },
+        "done": {
+          "en": "Product unit is AvailableInYard at a known depot and visible in inventory.",
+          "fa": "کالا در دپوی مشخص جانمایی و با وضعیت موجود در محوطه در سیستم قابل مشاهده است."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-03-vessel",
+        "kind": "chapter",
+        "chapterN": 3,
+        "x": 2829.3266739736605,
+        "y": 925,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "A vessel becomes ready: declare the loading target",
+          "fa": "آماده‌سازی شناور: مقصد بارگیری را مشخص کنید"
+        },
+        "actor": {
+          "en": "Control office operator / manager",
+          "fa": "اپراتور دفتر کنترل یا مدیر عملیات"
+        },
+        "hook": {
+          "en": "A ship or barge will load. Customs declaration (Kotaj) is done. The yard must know which vessel, which voyage, which destination, and which holds — before anyone is allowed to move stock toward the quay.",
+          "fa": "وقتی کشتی یا بارج برای بارگیری آماده می‌شود، باید شناور، سفر، مقصد و شماره کوتاژ آن در سامانه مشخص باشد. این اطلاعات به همه می‌گوید بار برای کدام عملیات بارگیری آماده می‌شود و قرار است در کشتی در کدام Hold تخلیه شود."
+        },
+        "done": {
+          "en": "Active voyage + Kotaj exist for the loading operation.",
+          "fa": "برای عملیات بارگیری، شناور و سفر فعال با کوتاژ معتبر در سیستم وجود دارد."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-04-yard-selection",
+        "kind": "chapter",
+        "chapterN": 4,
+        "x": 2970,
+        "y": 1450,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Choose the exact pieces: claim, verify, color-mark",
+          "fa": "انتخاب از دپو: همان قطعاتی را که واقعاً می‌خواهید بار کنید مشخص کنید"
+        },
+        "actor": {
+          "en": "Yard operator / depot tallyman (supervisor for conflicts)",
+          "fa": "اپراتور محوطه و بارشمار پای دپو؛ سرشیفت برای حل تعارض"
+        },
+        "hook": {
+          "en": "You do not release “20,000 tons” as a blob. You claim exact product IDs from AvailableInYard stock. Then you physically verify them. Then workers spray the operational color mark so ship and destination can tell items apart. Only when gates pass does the selection become ReadyForRelease.",
+          "fa": "آزادسازی به‌معنای انتخاب یک عدد کلی تناژ نیست. باید قطعه‌های واقعی را با شماره شناسایی از داخل دپو پیدا کرد، آن‌ها را انتخاب کرد، از نظر فیزیکی تأیید کرد و روی آن‌ها رنگ عملیاتی زد. این رنگ برای تشخیص کالا در مسیر، پای کشتی و در مقصد به کار می‌رود و با علامت کارخانه فرق دارد."
+        },
+        "done": {
+          "en": "Selection is ReadyForRelease (or ConvertedToRelease) with verified marks.",
+          "fa": "قطعات انتخاب‌شده از نظر فیزیکی و رنگ تأیید شده‌اند و انتخاب برای آزادسازی آماده است."
+        },
+        "critical": true
+      },
+      {
+        "id": "ch-05-release",
+        "kind": "chapter",
+        "chapterN": 5,
+        "x": 2829.3266739736605,
+        "y": 1975,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Authorize loading for this vessel — without leaving the yard yet",
+          "fa": "آزادسازی: کالا را برای همان شناور کنار بگذارید"
+        },
+        "actor": {
+          "en": "Control office / manager",
+          "fa": "اپراتور دفتر کنترل یا مدیر مجاز"
+        },
+        "hook": {
+          "en": "Release allocates the verified product IDs to one vessel/voyage/Kotaj and freezes the color mark on the plan. Stock is still physically in the depot. Inventory must still show the units — now as ReleasedToVessel — so nobody treats them as free stock for another ship.",
+          "fa": "بعد از آماده‌شدن انتخاب محوطه، قطعه‌های تأییدشده به شناور، سفر و کوتاژ مشخص تخصیص داده می‌شوند. رنگ تأییدشده هم در آزادسازی ثبت می‌شود. در این مرحله، کالا هنوز در دپو است؛ نه روی کامیون رفته و نه از درب انبار خارج شده است."
+        },
+        "done": {
+          "en": "Units are ReleasedToVessel for this voyage and appear as such in inventory.",
+          "fa": "کالا برای سفر مشخص آزاد شده و در موجودی با وضعیت آزادشده برای شناور دیده می‌شود."
+        },
+        "critical": true
+      },
+      {
+        "id": "ch-06-fleet",
+        "kind": "chapter",
+        "chapterN": 6,
+        "x": 2445,
+        "y": 2359.3266739736605,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Only approved trucks may run this vessel’s shuttle",
+          "fa": "راهبری: فقط کامیون و راننده مجاز را برای این شناور فعال کنید"
+        },
+        "actor": {
+          "en": "Guidance operator",
+          "fa": "اپراتور واحد راهبری"
+        },
+        "hook": {
+          "en": "Heavy flatbeds move released cargo from yard to pier. Theft, wrong vessel, unsafe trucks, and mix-ups across concurrent vessels are real risks. Guidance activates trucks and drivers for this vessel/voyage/Kotaj window only. After loading ends, assignments deactivate.",
+          "fa": "کالا از انبار تا اسکله با کفی حمل می‌شود و این مسیر معمولاً حدود بیست تا سی دقیقه طول می‌کشد. واحد راهبری مشخص می‌کند کدام کامیون و کدام راننده فقط برای همین شناور، همین سفر و همین بازه زمانی اجازه حمل دارند."
+        },
+        "done": {
+          "en": "Approved truck/driver set is active for this voyage.",
+          "fa": "کامیون و راننده مجاز برای سفر مشخص فعال هستند و در پای دپو قابل انتخاب‌اند."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-07-depot-tally",
+        "kind": "chapter",
+        "chapterN": 7,
+        "x": 1920,
+        "y": 2500,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "At the depot: load this ID onto this approved truck",
+          "fa": "پای دپو: کالای درست را روی کامیون درست بار بزنید"
+        },
+        "actor": {
+          "en": "Depot tallyman",
+          "fa": "بارشمار پای دپو"
+        },
+        "hook": {
+          "en": "An approved truck queues. The tallyman picks the product ID and plate. The system must prove: released to this vessel, not already loaded, truck approved, color/item match. A receipt number is issued; tallyman writes it on paper for the driver. Driver goes to control office.",
+          "fa": "کامیون مجاز کنار دپو می‌ایستد. بارشمار شماره شناسایی کالا و پلاک را وارد یا انتخاب می‌کند. سامانه باید مطمئن شود که این کالا برای همین شناور آزاد شده، قبلاً بارگیری نشده و رنگ و آیتم آن با آزادسازی می‌خواند. بعد از این کنترل‌ها، شماره رسید پای دپو صادر می‌شود."
+        },
+        "done": {
+          "en": "Driver holds a receipt number tied to product + truck + vessel.",
+          "fa": "راننده رسیدی در اختیار دارد که کالا، کامیون، شناور و دپوی بارگیری را به هم وصل می‌کند."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-08-bijak",
+        "kind": "chapter",
+        "chapterN": 8,
+        "x": 1394.9999999999998,
+        "y": 2359.3266739736605,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Control office prints the colored Bijak — the ticket that rules the road",
+          "fa": "دفتر کنترل: بیجک رنگی را پس از کنترل کامل صادر کنید"
+        },
+        "actor": {
+          "en": "Control office operator",
+          "fa": "اپراتور دفتر کنترل"
+        },
+        "hook": {
+          "en": "Driver presents the depot receipt. Operator validates release, truck, color, unused receipt. Issues Bijak and prints multi-copy colored tickets (e.g. green for driver/freight, white for vessel tally, others for gate/zone). Inventory becomes BijakAllocated. Journey clock toward vessel confirmation starts.",
+          "fa": "راننده شماره یا برگه رسید پای دپو را به دفتر کنترل می‌آورد. اپراتور، رسید، آزادسازی، کالا، رنگ و مجازبودن کامیون را بررسی می‌کند. اگر همه‌چیز درست باشد، بیجک صادر می‌شود و نسخه‌های رنگی آن چاپ می‌شود؛ هر نسخه هم مسیر مشخصی دارد: راننده، حراست، بارشمار کشتی، منطقه ویژه یا بایگانی دفتر کنترل."
+        },
+        "done": {
+          "en": "Printed Bijak exists; product is BijakAllocated; truck journey is live.",
+          "fa": "بیجک چاپ‌شده و قابل کنترل در دست راننده است و سفر کامیون وارد مرحله پیگیری می‌شود."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-09-gate",
+        "kind": "chapter",
+        "chapterN": 9,
+        "x": 1010.6733260263395,
+        "y": 1975.0000000000005,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Warehouse gate: security’s final warehouse exit",
+          "fa": "حراست درب انبار: آخرین کنترل پیش از خروج"
+        },
+        "actor": {
+          "en": "Warehouse gate security",
+          "fa": "حراست درب انبار"
+        },
+        "hook": {
+          "en": "Security checks cargo against Bijak and records final exit. Only authorized gate users confirm. After exit, cargo is between yard and ship — “in transit”: GateExited but not yet vessel-received. Yellow/special-zone copy may be handed over physically.",
+          "fa": "کامیون با بیجک به درب انبار می‌رسد. حراست بار روی کفی، شماره شناسایی، رنگ و پلاک را با بیجک تطبیق می‌دهد، نسخه مخصوص حراست را برمی‌دارد و خروج نهایی را ثبت می‌کند. بعد از این ثبت، کالا از انبار خارج شده است، اما هنوز تحویل کشتی نشده است."
+        },
+        "done": {
+          "en": "Gate exit confirmed; unit is GateExited / in transit to vessel.",
+          "fa": "خروج نهایی ثبت شده و کامیون با محموله در مسیر اسکله است."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-10-vessel",
+        "kind": "chapter",
+        "chapterN": 10,
+        "x": 870,
+        "y": 1450.0000000000002,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "At the ship: tallyman confirms hold — journey closes",
+          "fa": "پای کشتی: تحویل کالا و Hold را تأیید کنید"
+        },
+        "actor": {
+          "en": "Vessel tallyman",
+          "fa": "بارشمار کشتی"
+        },
+        "hook": {
+          "en": "After the ~20–30 minute run, vessel tallyman confirms receipt against Bijak and selects ship hold. That confirmation closes the truck service journey. If confirmation exceeds the SLA deadline, the journey is ConfirmationOverdue and alerts fire — this is what the Operations Dashboard watches.",
+          "fa": "کامیون پس از خروج از انبار به اسکله می‌رسد. بارشمار کشتی، بیجک، شماره شناسایی و رنگ کالا را کنترل می‌کند، Hold محل تخلیه را انتخاب می‌کند و دریافت کالا را ثبت می‌کند. همین ثبت، پایان واقعی سفر کامیون است."
+        },
+        "done": {
+          "en": "Unit VesselReceived; journey closed (or overdue path handled).",
+          "fa": "دریافت کالا در Hold ثبت شده و سفر کامیون بسته شده است؛ یا اینکه وضعیت دیرکرد یا مغایرت برای پیگیری باقی مانده است."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-11-reconcile",
+        "kind": "chapter",
+        "chapterN": 11,
+        "x": 1010.6733260263395,
+        "y": 925,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "End of shift: count tickets, resolve fights, close the day",
+          "fa": "پایان شیفت: بیجک‌ها را با خروجی واقعی تطبیق دهید"
+        },
+        "actor": {
+          "en": "Terminal reviewer",
+          "fa": "بازبین واحد ترمینال"
+        },
+        "hook": {
+          "en": "Yesterday’s Bijaks and system exits are compared: issued but not exited, exited but not vessel-received, count/weight/color mismatches. Discrepancies are resolved with reason; reconciliation closes. Units move toward Closed.",
+          "fa": "در پایان شیفت یا پایان روز، بیجک‌های تحویلی از کشتی با خروجی سامانه مقایسه می‌شوند. باید روشن شود چند بیجک صادر شده، چند کامیون از انبار خارج شده و چند کالا واقعاً به کشتی تحویل شده است. هر اختلافی، از جمله بیجکِ صادرشده اما خارج‌نشده یا کالای خارج‌شده اما تحویل‌کشتی‌نشده، باید دیده و پیگیری شود."
+        },
+        "done": {
+          "en": "Shift reconciliation Closed; remaining gaps are explicit discrepancies.",
+          "fa": "آمار شیفت بسته شده است و هر مورد حل‌نشده به‌صورت یک مغایرت روشن و قابل‌پیگیری باقی مانده است."
+        },
+        "critical": false
+      },
+      {
+        "id": "ch-12-reports",
+        "kind": "chapter",
+        "chapterN": 12,
+        "x": 1394.9999999999995,
+        "y": 540.6733260263396,
+        "w": 560,
+        "h": 400,
+        "title": {
+          "en": "Managers ask: what is in yard, on road, on vessel?",
+          "fa": "گزارش و داشبورد: پاسخ‌دادن به وضعیت واقعی عملیات"
+        },
+        "actor": {
+          "en": "Manager / shift supervisor / terminal",
+          "fa": "مدیر، سرشیفت محوطه و واحد ترمینال"
+        },
+        "hook": {
+          "en": "Reporting never invents truth — it projects lifecycle facts. Dashboard is the shift lens (KPIs, in-transit, overdue). Reports hub is the deeper cut (inventory, loading, discrepancies, truck performance).",
+          "fa": "داشبورد و گزارش‌ها قرار نیست واقعیت تازه‌ای بسازند؛ باید همان اتفاق‌هایی را که در سفارش، ورود، آزادسازی، بیجک، خروج، تحویل کشتی و تطبیق ثبت شده‌اند، به زبانی قابل‌فهم برای تصمیم‌گیری نشان دهند. سرشیفت می‌خواهد بداند چه کالایی در دپو مانده، کدام کامیون در مسیر معطل شده و بارگیری هر شناور در چه وضعیتی است."
+        },
+        "done": {
+          "en": "Supervisor can answer inventory, stuck trucks, and loading progress without calling every desk.",
+          "fa": "مسئول عملیات، بدون تماس با همه واحدها، می‌تواند وضعیت موجودی، بارگیری و موارد معطل را بفهمد و برای آن تصمیم بگیرد."
+        },
+        "critical": false
+      },
+      {
+        "id": "finale",
+        "kind": "hub",
+        "x": 1920,
+        "y": 2820,
+        "w": 560,
+        "h": 280,
+        "title": {
+          "en": "Traceability complete",
+          "fa": "ردیابی کامل شد"
+        },
+        "body": {
+          "en": "Every product unit is auditable from order to hold. Open the full story, role views, glossary, or domain model for depth.",
+          "fa": "هر واحد محصول از سفارش تا Hold قابل ممیزی است. برای جزئیات بیشتر داستان کامل، نقش‌ها، واژه‌نامه یا مدل دامنه را باز کنید."
+        }
+      }
+    ],
+    "path": [
+      "overview",
+      "ch-01-order",
+      "ch-02-receiving",
+      "ch-03-vessel",
+      "ch-04-yard-selection",
+      "ch-05-release",
+      "ch-06-fleet",
+      "ch-07-depot-tally",
+      "ch-08-bijak",
+      "ch-09-gate",
+      "ch-10-vessel",
+      "ch-11-reconcile",
+      "ch-12-reports",
+      "finale"
     ]
   },
   "screenCount": 70

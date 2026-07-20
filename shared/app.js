@@ -832,10 +832,26 @@
 
     var meta = document.createElement("p");
     meta.className = "models-source muted";
-    meta.textContent =
-      doc.source +
-      " · " +
-      fmt(ui("modelsLineCount"), { count: doc.lineCount, toc: doc.toc.length });
+    var sectionCount =
+      doc.sectionCount != null
+        ? doc.sectionCount
+        : (doc.toc || []).filter(function (item) {
+            return item.level === 2;
+          }).length;
+    var file = document.createElement("span");
+    file.className = "models-filename";
+    file.setAttribute("dir", "ltr");
+    file.textContent = doc.source;
+    meta.appendChild(file);
+    meta.appendChild(document.createTextNode(" · "));
+    var stats = document.createElement("span");
+    stats.className = "models-stats";
+    stats.setAttribute("dir", getLang() === "fa" ? "rtl" : "ltr");
+    stats.textContent = fmt(ui("modelsLineCount"), {
+      lines: doc.lineCount,
+      sections: sectionCount,
+    });
+    meta.appendChild(stats);
     root.appendChild(meta);
 
     var layout = document.createElement("div");
