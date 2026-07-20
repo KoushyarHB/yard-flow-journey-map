@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>By role — Yard Flow</title>
+  <link rel="stylesheet" href="shared/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 data-ui="rolesPageTitle"></h1>
+    <nav class="pills">
+      <a href="index.html" data-ui="navStart">Start</a>
+      <a href="story.html" data-ui="navStory">Cargo story</a>
+      <a href="roles.html" class="active" data-ui="navRoles">By role</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en">EN</button>
+      <button type="button" data-lang-btn="fa">فا</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p style="color:var(--muted);margin-bottom:1.25rem" data-ui="rolesIntro"></p>
+    <div id="roles"></div>
+  </main>
+
+  <script src="shared/data.js"></script>
+  <script src="shared/app.js"></script>
+  <script>
+    (function () {
+      var Y = YardStory;
+      Y.initLangToggle();
+
+      function paint() {
+        document.querySelectorAll("[data-ui]").forEach(function (el) {
+          el.textContent = Y.ui(el.getAttribute("data-ui"));
+        });
+        var d = Y.data();
+        var root = document.getElementById("roles");
+        root.innerHTML = "";
+        d.roles.forEach(function (r) {
+          var card = document.createElement("section");
+          card.className = "role-card";
+          card.id = r.id;
+          var cares = Y.L(r.caresAbout);
+          cares = Array.isArray(cares) ? cares.join(" · ") : cares;
+          card.innerHTML =
+            "<h3>" + Y.esc(Y.L(r.title)) + "</h3>" +
+            '<p class="morning">' + Y.esc(Y.L(r.morning)) + "</p>" +
+            '<div class="links"></div>' +
+            '<p class="cares"><strong>' + Y.esc(Y.ui("caresAbout")) + "</strong> " + Y.esc(cares) + "</p>";
+          var links = card.querySelector(".links");
+          (r.chapterRefs || []).forEach(function (ch) {
+            var a = document.createElement("a");
+            a.href = "story.html#" + ch.id;
+            a.textContent = Y.fmt(Y.ui("chapterLink"), {
+              n: ch.n,
+              title: Y.L(ch.title),
+            });
+            links.appendChild(a);
+          });
+          root.appendChild(card);
+        });
+        document.title =
+          Y.getLang() === "fa" ? "بر اساس نقش — Yard Flow" : "By role — Yard Flow";
+      }
+
+      paint();
+      window.addEventListener("yf-lang-change", paint);
+    })();
+  </script>
+</body>
+</html>

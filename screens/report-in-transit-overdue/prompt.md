@@ -1,0 +1,70 @@
+# In-Transit & Overdue — implementation prompt
+
+![mockup](desktop.png)
+
+## Business context
+- **Cluster:** Reports & Analytics (Phase 8)
+- **Purpose:** Operational and audit reports across the full lifecycle.
+- **Actor:** Manager, Terminal Reviewer
+
+- **Follows:** close-out
+
+
+### Related screens in this cluster
+- [Reports Hub](../reports-hub/prompt.md) (`/yard-flow/reports`)
+- [Inventory Report](../report-inventory/prompt.md) (`/yard-flow/reports/inventory`)
+- [Loading Report](../report-loading/prompt.md) (`/yard-flow/reports/loading`)
+- [Discrepancies Report](../report-discrepancies/prompt.md) (`/yard-flow/reports/discrepancies`)
+- [Truck Performance](../report-truck-performance/prompt.md) (`/yard-flow/reports/truck-performance`)
+
+## Goal
+In-Transit & Overdue screen in the **Reports & Analytics** cluster. Used by Manager, Terminal Reviewer.
+
+## Route & placement
+- Route: `/yard-flow/reports/in-transit`
+- Sidebar: Yard Flow (L1 rail) → Reports (L2 cluster) → route cluster → In-Transit & Overdue (L4)
+- Breadcrumb: Yard Flow / Reports / In-Transit & Overdue
+- Register in `getSidebarItems.ts` under top-level `yardFlow` key (same level as `commercial`)
+
+## Backend API
+- Base URL constant: `YF_REPORTING_BASE_URL` = `${BASE_URL}/api/reporting/v1`
+- Endpoints:
+  | Method | Path | Purpose | Request DTO | Response DTO |
+  |--------|------|---------|-------------|--------------|
+| `GET` | `/reports/in-transit` | In-Transit & Overdue action | — | — |
+| `GET` | `/reports/overdue` | In-Transit & Overdue action | — | — |
+- Auth: mutations require `actor` field. Permissions: .
+
+
+## Data model (frontend types to add)
+- `src/lib/types/yard-flow/response/report-in-transit-overdue/get-report-in-transit-overdue.dto.ts`
+- `src/lib/types/yard-flow/request/report-in-transit-overdue/create-report-in-transit-overdue-request.dto.ts`
+
+
+## UI spec
+- Component pattern: **Filters + GenericTable report**
+### Columns
+- **Bijak** (`bijakNo`) — filter: text
+- **Truck** (`plate`) — filter: text
+- **Status** (`journey`) — filter: text, status badge
+- **Deadline** (`date`) — filter: text
+
+- Toolbar actions mapped to endpoints listed above.
+- Status badges use semantic tones (green=confirmed, amber=draft, red=rejected, blue=in-progress).
+- States: loading skeleton, empty state, error toast, permission-gated hide/disable.
+- Validation: Zod schema in `src/lib/schema/yard-flow/report-in-transit-overdueSchema.ts`.
+
+## Files to create
+- `src/app/[locale]/yard-flow/...` — thin route wrapper
+- `src/components/pages/yard-flow/reports/report-in-transit-overdue/`
+- `src/services/yard-flow/reportingService.ts`
+- `src/hooks/yard-flow/useIn-Transit&OverdueMutations.ts`
+- Add under `yardFlow` in `src/utils/getSidebarItems.ts` (top-level sibling of commercial)
+- Add `export const YF_REPORTING_BASE_URL = `${BASE_URL}/api/reporting/v1`;` to `src/constants/baseUrl.ts`
+
+## Acceptance criteria
+- [ ] Route renders with Yard Flow rail item active + correct cluster submenu highlight
+- [ ] All API endpoints wired with correct DTOs
+- [ ] Grid columns, filters, pagination match spec
+- [ ] Permission-gated UI elements respect roles
+- [ ] Matches tms.frontend design tokens and shared components

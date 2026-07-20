@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yard Flow — How the business works</title>
+  <link rel="stylesheet" href="shared/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 data-ui="brand">Yard Flow</h1>
+    <nav class="pills">
+      <a href="index.html" class="active" data-ui="navStart">Start</a>
+      <a href="story.html" data-ui="navStory">Cargo story</a>
+      <a href="roles.html" data-ui="navRoles">By role</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en">EN</button>
+      <button type="button" data-lang-btn="fa">فا</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="hero"></section>
+
+    <h3 style="margin:1.5rem 0 0.5rem" data-ui="lifecycleHeading"></h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem" data-ui="lifecycleHint"></p>
+    <div class="lifecycle" id="lifecycle"></div>
+
+    <div class="hub-grid">
+      <a class="hub-card" href="story.html">
+        <h3 data-ui="hubStoryTitle"></h3>
+        <p data-ui="hubStoryBody"></p>
+      </a>
+      <a class="hub-card" href="roles.html">
+        <h3 data-ui="hubRoleTitle"></h3>
+        <p data-ui="hubRoleBody"></p>
+      </a>
+    </div>
+
+    <p class="footnote" id="footnote"></p>
+  </main>
+
+  <script src="shared/data.js"></script>
+  <script src="shared/app.js"></script>
+  <script>
+    (function () {
+      var Y = YardStory;
+      Y.initLangToggle();
+
+      function paint() {
+        var d = Y.data();
+        document.querySelectorAll("[data-ui]").forEach(function (el) {
+          var key = el.getAttribute("data-ui");
+          if (key === "lifecycleHeading" || key === "lifecycleHint") {
+            el.textContent = Y.fmt(Y.ui(key), { total: d.lifecycle.length });
+          } else {
+            el.textContent = Y.ui(key);
+          }
+        });
+        var m = d.meta;
+        document.getElementById("hero").innerHTML =
+          "<h2>" + Y.esc(Y.L(m.title)) + "</h2>" +
+          "<p>" + Y.esc(Y.L(m.premise)) + "</p>" +
+          '<a class="start" href="story.html">' + Y.esc(Y.ui("startStory")) + "</a>";
+        Y.renderLifecycle(document.getElementById("lifecycle"));
+        document.getElementById("footnote").textContent = Y.localizeDigits(
+          (Y.getLang() === "fa"
+            ? "منبع: تحلیل دامنه نسخه ۶.۱. "
+            : "Sourced from domain analysis v6.1. ") +
+            d.chapters.length +
+            (Y.getLang() === "fa" ? " فصل · " : " chapters · ") +
+            d.screenCount +
+            (Y.getLang() === "fa" ? " صفحه به‌عنوان ابزار." : " screens as tools.")
+        );
+        document.title =
+          Y.getLang() === "fa"
+            ? "Yard Flow — کسب‌وکار چگونه کار می‌کند"
+            : "Yard Flow — How the business works";
+      }
+
+      paint();
+      window.addEventListener("yf-lang-change", paint);
+    })();
+  </script>
+</body>
+</html>

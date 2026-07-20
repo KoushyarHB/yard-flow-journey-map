@@ -1,0 +1,480 @@
+/* Yard Flow — story journey (narrative-first)
+ *
+ * Fonts: Yekan Bakh (RTL/Farsi) from the app’s public/fonts — same family as the TMS UI.
+ * Path is relative to this CSS file so file:// open works without a server.
+ */
+
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../fonts/yekan-bakh/woff2/YekanBakh-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/static/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/static/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/static/Roboto-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/static/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #f7f4ef;
+  --paper: #fffdf9;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --warn: #b45309;
+  --warn-bg: #fff7ed;
+  --critical: #9f1239;
+  --critical-bg: #fff1f2;
+  --role: #1d4ed8;
+  --shadow: 0 12px 40px rgba(28, 25, 23, 0.08);
+  --radius: 16px;
+  --font-en: "Roboto", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-fa: "Yekan Bakh", Tahoma, "Segoe UI", sans-serif;
+  font-family: var(--font-en);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at top, #ecfdf5 0%, transparent 50%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.55;
+}
+
+a { color: var(--accent); }
+button { font: inherit; cursor: pointer; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar h1 { font-size: 1rem; flex: 1; min-width: 180px; }
+.pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pills a {
+  text-decoration: none; color: var(--ink);
+  padding: 0.35rem 0.75rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--paper); font-size: 0.85rem;
+}
+.pills a.active, .pills a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+.hero {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+.hero h2 { font-size: 1.65rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.hero .fa { direction: rtl; color: var(--accent); font-size: 1.1rem; margin-bottom: 0.75rem; }
+.hero p { color: var(--muted); max-width: 62ch; }
+.hero .start {
+  display: inline-block; margin-top: 1.25rem;
+  background: var(--accent); color: #fff; text-decoration: none;
+  padding: 0.7rem 1.2rem; border-radius: 10px; font-weight: 600;
+}
+
+.progress {
+  margin-bottom: 1.25rem;
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+.progress-row {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.15rem 0;
+}
+.progress-dot {
+  position: relative;
+  flex: 0 0 auto;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.progress-dot:hover { border-color: var(--accent); color: var(--accent); }
+.progress-dot.crit {
+  border-color: #fda4af;
+  background: var(--critical-bg);
+  color: var(--critical);
+}
+.progress-dot .crit-mark {
+  position: absolute;
+  top: -0.35rem;
+  inset-inline-end: -0.2rem;
+  font-size: 0.65rem;
+  line-height: 1;
+  color: var(--critical);
+}
+
+.chapter {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 72px;
+}
+.chapter.critical { border-color: #fda4af; }
+.chapter-head {
+  padding: 1.25rem 1.4rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fff 0%, #fafaf9 100%);
+}
+.chapter.critical .chapter-head { background: var(--critical-bg); }
+.kicker {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem;
+}
+.chapter h3 { font-size: 1.35rem; letter-spacing: -0.02em; }
+.chapter .title-fa { direction: rtl; color: var(--muted); margin-top: 0.25rem; }
+.meta-row {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem;
+}
+.chip {
+  font-size: 0.78rem; padding: 0.25rem 0.6rem; border-radius: 999px;
+  background: var(--accent-soft); color: #115e59;
+}
+.chip.setting { background: #f5f5f4; color: var(--muted); }
+
+.chapter-body { padding: 1.25rem 1.4rem 1.5rem; }
+.scene {
+  font-size: 1.05rem; margin-bottom: 1rem; max-width: 68ch;
+}
+.why {
+  border-left: 3px solid var(--accent);
+  padding: 0.65rem 0.9rem;
+  background: #f0fdfa;
+  border-radius: 0 10px 10px 0;
+  margin: 1rem 0;
+  color: var(--ink);
+}
+.why strong { color: var(--accent); }
+.alert {
+  margin: 1rem 0; padding: 0.85rem 1rem;
+  border-radius: 10px; background: var(--warn-bg); border: 1px solid #fdba74;
+  color: #7c2d12; font-size: 0.92rem;
+}
+.alert.critical-alert {
+  background: var(--critical-bg); border-color: #fda4af; color: var(--critical);
+}
+
+.grid-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+}
+@media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.block h4 {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); margin-bottom: 0.45rem;
+}
+.block ul { padding-left: 1.1rem; color: var(--ink); font-size: 0.92rem; }
+.block li { margin: 0.3rem 0; }
+
+.done {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tools { margin-top: 1.25rem; }
+.tools > h4 {
+  font-size: 0.85rem; margin-bottom: 0.65rem; color: var(--muted);
+}
+.tools-note {
+  font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem;
+}
+.tool-rail {
+  display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+.tool {
+  flex: 0 0 200px; scroll-snap-align: start;
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: #fff; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+}
+.tool:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.tool.mobile { flex: 0 0 120px; }
+.tool img {
+  width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top;
+  display: block; background: #f5f5f4;
+}
+.tool.mobile img { aspect-ratio: 9/16; }
+.tool .cap { padding: 0.5rem 0.65rem; font-size: 0.78rem; font-weight: 600; }
+.tool .route { font-size: 0.65rem; color: var(--muted); font-weight: 400; }
+
+.lifecycle {
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  background: #f0fdfa;
+  border: 1px dashed #5eead4;
+  border-radius: var(--radius);
+}
+.lifecycle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+.life-step {
+  font-size: 0.72rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.life-step b { display: block; color: var(--ink); font-size: 0.72rem; }
+.life-step .life-n {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.1rem;
+}
+.life-arrow { color: var(--muted); }
+
+.role-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+.role-card h3 { font-size: 1.15rem; }
+.role-card .fa { direction: rtl; color: var(--role); margin: 0.25rem 0 0.5rem; }
+.role-card .morning { color: var(--muted); margin-bottom: 0.75rem; }
+.role-card .links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.role-card .links a {
+  text-decoration: none; font-size: 0.8rem;
+  padding: 0.3rem 0.65rem; border-radius: 8px;
+  background: #eff6ff; color: var(--role); border: 1px solid #bfdbfe;
+}
+.cares { margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+
+.hub-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; margin-top: 1.25rem;
+}
+.hub-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow);
+}
+.hub-card:hover { border-color: var(--accent); }
+.hub-card h3 { margin-bottom: 0.4rem; }
+.hub-card p { color: var(--muted); font-size: 0.9rem; }
+
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(28,25,23,0.88); align-items: center; justify-content: center;
+  padding: 1.5rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: min(96vw, 1100px); max-height: 78vh; border-radius: 8px; }
+.lightbox .cap {
+  position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: #fff; padding: 0.6rem 1rem; border-radius: 8px; max-width: 90vw;
+  text-align: center; font-size: 0.9rem;
+}
+.lightbox .x {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; border: none; background: #fff;
+}
+
+.footnote {
+  margin-top: 2rem; font-size: 0.8rem; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 1rem;
+}
+
+body.picture-mode .scene,
+body.picture-mode .why,
+body.picture-mode .block,
+body.picture-mode .done,
+body.picture-mode .alert,
+body.picture-mode .tools-note { display: none; }
+body.picture-mode .tool { flex-basis: 260px; }
+body.picture-mode .tool.mobile { flex-basis: 140px; }
+
+.toolbar button {
+  border: 1px solid var(--line); background: var(--paper);
+  padding: 0.35rem 0.7rem; border-radius: 8px; font-size: 0.8rem;
+}
+.toolbar button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.lang-switch button {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+.lang-switch button.on {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* RTL (Farsi) — Yekan Bakh, same as TMS app */
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] .topbar,
+html[dir="rtl"] .wrap {
+  font-family: var(--font-fa);
+}
+html[dir="ltr"] body {
+  font-family: var(--font-en);
+}
+html[dir="rtl"] .why {
+  border-left: none;
+  border-right: 3px solid var(--accent);
+  border-radius: 10px 0 0 10px;
+}
+html[dir="rtl"] .block ul { padding-left: 0; padding-right: 1.1rem; }
+html[dir="rtl"] .done::before { content: none; }
+html[dir="rtl"] .scene,
+html[dir="rtl"] .why,
+html[dir="rtl"] .alert,
+html[dir="rtl"] .done,
+html[dir="rtl"] .tools-note,
+html[dir="rtl"] .hero p,
+html[dir="rtl"] .role-card .morning {
+  text-align: right;
+}
+html[dir="rtl"] .chapter h3,
+html[dir="rtl"] .hero h2,
+html[dir="rtl"] .role-card h3 {
+  text-align: right;
+}
+html[dir="rtl"] .hero h2 { font-size: 1.5rem; }
+html[dir="rtl"] .hero .fa { font-size: 1rem; }
+html[dir="rtl"] .hero p { font-size: 0.96rem; line-height: 1.9; }
+html[dir="rtl"] .chapter h3 { font-size: 1.22rem; }
+html[dir="rtl"] .chip { font-size: 0.74rem; }
+html[dir="rtl"] .scene { font-size: 0.98rem; line-height: 2; }
+html[dir="rtl"] .why,
+html[dir="rtl"] .alert,
+html[dir="rtl"] .done,
+html[dir="rtl"] .block ul,
+html[dir="rtl"] .tools-note,
+html[dir="rtl"] .role-card .morning {
+  font-size: 0.9rem;
+  line-height: 1.95;
+}
+html[dir="rtl"] .block h4,
+html[dir="rtl"] .tools > h4 {
+  font-size: 0.76rem;
+}
+html[dir="ltr"] .done-prefix { font-weight: 700; color: var(--accent); }
+html[dir="rtl"] .done-prefix { font-weight: 700; color: var(--accent); }
+
+.done::before { content: none; }
