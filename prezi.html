@@ -1,50 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flow tour — Yard Flow</title>
-  <link rel="stylesheet" href="shared/styles.css" />
-</head>
-<body class="prezi-page">
-  <header id="site-header"></header>
-
-  <div class="prezi-stage">
-    <div id="prezi-viewport" class="prezi-viewport" tabindex="0">
-      <div id="prezi-canvas" class="prezi-canvas"></div>
-    </div>
-
-    <div class="prezi-hud">
-      <div class="prezi-hud-controls">
-        <button type="button" id="prezi-prev" class="prezi-btn"></button>
-        <span id="prezi-step" class="prezi-step"></span>
-        <button type="button" id="prezi-next" class="prezi-btn prezi-btn-primary"></button>
-        <button type="button" id="prezi-overview" class="prezi-btn"></button>
-        <a id="prezi-chapter-link" class="prezi-chapter-link is-unavailable" href="story.html"></a>
-      </div>
-    </div>
-    <p id="prezi-hint" class="prezi-hint"></p>
-  </div>
-
-  <script src="shared/data.js"></script>
-  <script src="shared/app.js"></script>
-  <script src="shared/prezi.js"></script>
-  <script>
-    (function () {
-      var Y = YardStory;
-      Y.initLangToggle();
-      Y.mountSiteHeader("prezi", { compact: true });
-
-      function paint() {
-        document.title =
-          Y.getLang() === "fa"
-            ? "تور — Yard Flow"
-            : "Tour — Yard Flow";
-        YardPrezi.init();
-      }
-      paint();
-      window.addEventListener("yf-lang-change", paint);
-    })();
-  </script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Flow tour — Yard Flow</title>
+
+  <link rel="stylesheet" href="shared/styles.css" />
+
+</head>
+
+<body class="prezi-page">
+
+  <header id="site-header"></header>
+
+
+
+  <div class="prezi-stage">
+
+    <div id="prezi-viewport" class="prezi-viewport" tabindex="0">
+
+      <div id="prezi-canvas" class="prezi-canvas"></div>
+
+    </div>
+
+
+
+    <div class="prezi-hud">
+      <div class="prezi-hud-controls">
+        <button type="button" id="prezi-prev" class="prezi-btn"></button>
+        <span id="prezi-step" class="prezi-step"></span>
+        <button type="button" id="prezi-next" class="prezi-btn prezi-btn-primary"></button>
+        <button type="button" id="prezi-overview" class="prezi-btn"></button>
+      </div>
+      <a id="prezi-chapter-link" class="prezi-chapter-link is-unavailable" href="story.html"></a>
+    </div>
+
+    <p id="prezi-hint" class="prezi-hint"></p>
+
+  </div>
+
+
+
+  <script src="shared/data.js"></script>
+
+  <script src="shared/app.js"></script>
+
+  <script src="shared/prezi.js"></script>
+
+  <script>
+
+    (function () {
+
+      var Y = YardStory;
+
+      Y.initLangToggle();
+
+      Y.mountSiteHeader("prezi", { compact: true });
+
+
+
+      function paint() {
+
+        document.title =
+
+          Y.getLang() === "fa"
+
+            ? "تور — Yard Flow"
+
+            : "Tour — Yard Flow";
+
+        YardPrezi.init();
+
+      }
+
+      paint();
+
+      window.addEventListener("yf-lang-change", paint);
+
+    })();
+
+  </script>
+
+</body>
+
+</html>
+

@@ -118,14 +118,35 @@
       });
     }
 
+    function contentBounds() {
+      var minX = Infinity;
+      var minY = Infinity;
+      var maxX = -Infinity;
+      var maxY = -Infinity;
+      frames.forEach(function (f) {
+        minX = Math.min(minX, f.x);
+        minY = Math.min(minY, f.y);
+        maxX = Math.max(maxX, f.x + f.w);
+        maxY = Math.max(maxY, f.y + (f.h || 400));
+      });
+      var pad = 100;
+      return {
+        x: minX - pad,
+        y: minY - pad,
+        w: maxX - minX + pad * 2,
+        h: maxY - minY + pad * 2,
+      };
+    }
+
     function fitOverview() {
       var vpW = viewport.clientWidth;
       var vpH = viewport.clientHeight;
-      var scale = Math.min(vpW / meta.canvas.width, vpH / meta.canvas.height) * 0.88;
+      var b = contentBounds();
+      var scale = Math.min(vpW / b.w, vpH / b.h) * 0.97;
       return {
         scale: scale,
-        tx: (vpW - meta.canvas.width * scale) / 2,
-        ty: (vpH - meta.canvas.height * scale) / 2,
+        tx: (vpW - b.w * scale) / 2 - b.x * scale,
+        ty: (vpH - b.h * scale) / 2 - b.y * scale,
       };
     }
 
@@ -167,6 +188,7 @@
         linkChapter.classList.toggle("is-unavailable", !showChapter);
         linkChapter.setAttribute("aria-hidden", showChapter ? "false" : "true");
         linkChapter.tabIndex = showChapter ? 0 : -1;
+        linkChapter.style.display = showChapter ? "" : "none";
       }
       btnPrev.disabled = pathIndex <= 0;
       btnNext.disabled = pathIndex >= path.length - 1;
@@ -176,8 +198,8 @@
       currentId = id;
       var f = frameById[id];
       if (!f) return;
-      var t =
-        id === "overview" && !keepFocus ? fitOverview() : focusFrame(f);
+      var t = id === "overview" ? fitOverview() : focusFrame(f);
+      canvas.classList.toggle("prezi-mode-overview", id === "overview");
       applyTransform(t);
       updateHud();
     }

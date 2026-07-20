@@ -1174,21 +1174,40 @@ html[dir="rtl"] .prezi-frame-kicker {
   color: #b45309;
   border-radius: 4px;
 }
+.prezi-canvas.prezi-mode-overview .prezi-frame {
+  padding: 1.1rem 1.2rem;
+}
+.prezi-canvas.prezi-mode-overview .prezi-frame h3 {
+  font-size: 1.12rem;
+}
+.prezi-canvas.prezi-mode-overview .prezi-frame-kicker {
+  font-size: 0.78rem;
+}
+.prezi-canvas.prezi-mode-overview .prezi-actor,
+.prezi-canvas.prezi-mode-overview .prezi-hook {
+  font-size: 0.92rem;
+}
+.prezi-canvas.prezi-mode-overview .prezi-hook {
+  -webkit-line-clamp: 4;
+}
 .prezi-hud {
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.92);
   border-top: 1px solid var(--line);
   backdrop-filter: blur(8px);
 }
 .prezi-hud-controls {
-  display: grid;
-  grid-template-columns: auto 9.5rem auto auto 12rem;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.65rem;
-  width: min(100%, 44rem);
+  width: 100%;
 }
 .prezi-btn {
   padding: 0.45rem 1rem;
@@ -1223,7 +1242,7 @@ html[dir="rtl"] .prezi-frame-kicker {
 .prezi-step {
   font-size: 0.85rem;
   color: var(--muted);
-  width: 100%;
+  min-width: 9.5rem;
   text-align: center;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -1234,13 +1253,10 @@ html[dir="rtl"] .prezi-frame-kicker {
   text-decoration: none;
   font-weight: 600;
   white-space: nowrap;
-  justify-self: center;
-  width: 100%;
   text-align: center;
 }
 .prezi-chapter-link.is-unavailable {
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 .prezi-chapter-link:hover { text-decoration: underline; }
 .prezi-hint {
@@ -1253,19 +1269,7 @@ html[dir="rtl"] .prezi-frame-kicker {
 }
 @media (max-width: 640px) {
   .prezi-hud { padding: 0.5rem; }
-  .prezi-hud-controls {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "step step"
-      "prev next"
-      "overview chapter";
-    width: 100%;
-    gap: 0.4rem;
-  }
-  #prezi-step { grid-area: step; }
-  #prezi-prev { grid-area: prev; }
-  #prezi-next { grid-area: next; }
-  #prezi-overview { grid-area: overview; }
-  #prezi-chapter-link { grid-area: chapter; }
-  .prezi-btn { padding: 0.4rem 0.65rem; font-size: 0.82rem; width: 100%; }
+  .prezi-hud-controls { gap: 0.4rem; }
+  .prezi-btn { padding: 0.4rem 0.65rem; font-size: 0.82rem; }
+  .prezi-step { min-width: 7rem; }
 }
