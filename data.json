@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T10:19:11.917Z",
+  "generatedAt": "2026-07-20T10:24:21.758Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
@@ -63,7 +63,7 @@
     },
     "storyIntro": {
       "en": "Read top to bottom. Each chapter is a usage beat: scene → why → physical yard → software actions → rules → done when → then the screens for that beat. ★ marks chapters where frontend build order disagrees with runtime business order.",
-      "fa": "از بالا به پایین بخوانید. هر فصل یک گام کاربرد است: صحنه ← چرا ← محوطه فیزیکی ← کار در نرم‌افزار ← قواعد ← تمام وقتی ← سپس صفحات همان گام. علامت ★ جایی است که ترتیب ساخت فرانت با ترتیب واقعی کسب‌وکار فرق دارد."
+      "fa": "از بالا به پایین بخوانید. هر فصل یک گام کاربرد است: صحنه ← چرا ← محوطه فیزیکی ← کار در نرم‌افزار ← قواعد ← وضعیت نهایی ← سپس صفحات همان گام. علامت ★ جایی است که ترتیب ساخت فرانت با ترتیب واقعی کسب‌وکار فرق دارد."
     },
     "storyFoot": {
       "en": "Domain analysis §6 end-to-end flow, §7 detailed processes, §9 lifecycle, §10 rules. Backend runtime: yard selection readiness before release confirm.",
@@ -111,7 +111,7 @@
     },
     "donePrefix": {
       "en": "Done when — ",
-      "fa": "تمام وقتی — "
+      "fa": "وضعیت نهایی — "
     },
     "toolsLabel": {
       "en": "Screens used at this moment",
