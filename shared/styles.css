@@ -263,8 +263,11 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
 
 .block h4 {
-  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--muted); margin-bottom: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #115e59;
+  margin-bottom: 0.5rem;
 }
 .sentence-list { color: var(--ink); font-size: 0.92rem; line-height: 1.9; }
 
@@ -471,7 +474,10 @@ html[dir="rtl"] .role-card .morning {
 }
 html[dir="rtl"] .block h4,
 html[dir="rtl"] .tools > h4 {
-  font-size: 0.76rem;
+  font-size: 0.92rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accent);
 }
 html[dir="ltr"] .done-prefix { font-weight: 700; color: var(--accent); }
 html[dir="rtl"] .done-prefix { font-weight: 700; color: var(--accent); }
