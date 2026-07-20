@@ -31,13 +31,17 @@
 
 
     <div class="prezi-hud">
-      <div class="prezi-hud-inner">
-        <button type="button" id="prezi-prev" class="prezi-btn"></button>
-        <span id="prezi-step" class="prezi-step"></span>
-        <button type="button" id="prezi-next" class="prezi-btn prezi-btn-primary"></button>
-        <button type="button" id="prezi-overview" class="prezi-btn"></button>
-        <a id="prezi-chapter-link" class="prezi-chapter-link is-unavailable" href="story.html"></a>
+      <div class="prezi-hud-bar">
+        <div class="prezi-hud-side prezi-hud-side--start">
+          <button type="button" id="prezi-prev" class="prezi-btn"></button>
+        </div>
+        <div class="prezi-hud-side prezi-hud-side--end">
+          <button type="button" id="prezi-next" class="prezi-btn prezi-btn-primary"></button>
+          <button type="button" id="prezi-overview" class="prezi-btn"></button>
+          <a id="prezi-chapter-link" class="prezi-chapter-link is-unavailable" href="story.html"></a>
+        </div>
       </div>
+      <span id="prezi-step" class="prezi-step prezi-hud-center"></span>
     </div>
 
     <p id="prezi-hint" class="prezi-hint"></p>
