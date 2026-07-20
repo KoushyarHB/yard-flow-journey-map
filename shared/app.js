@@ -84,6 +84,25 @@
     return normalizeFaPunctuation(localizeDigits(value));
   }
 
+  function localizeDigitsInTree(root) {
+    if (!root) return;
+    var skip = new Set(["CODE", "PRE", "SCRIPT", "STYLE", "KBD", "SAMP"]);
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        var parent = node.parentElement;
+        while (parent && parent !== root) {
+          if (skip.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+          parent = parent.parentElement;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    var node;
+    while ((node = walker.nextNode())) {
+      node.textContent = localizeDigits(node.textContent);
+    }
+  }
+
   /** Pick bilingual field: {en,fa} or plain string fallback */
   function L(field) {
     if (field == null) return "";
@@ -586,16 +605,13 @@
     var active = siteHeaderState.active;
     var opts = siteHeaderState.opts || {};
     var html = '<div class="site-header-inner">';
-    html += '<div class="site-header-top">';
+    html += '<div class="site-header-row">';
     html +=
       '<a href="index.html" class="site-brand' +
       (active === "index" ? " active" : "") +
       '">' +
       esc(ui("navBrand")) +
       "</a>";
-    html += '<div class="site-header-tools">' + (opts.toolsHtml || "") + "</div>";
-    html += langSwitcherHtml();
-    html += "</div>";
     html += '<nav class="site-nav" aria-label="' + esc(ui("navAriaLabel")) + '">';
     html += '<div class="site-nav-group site-nav-group--primary">';
     SITE_NAV_PRIMARY.forEach(function (item) {
@@ -608,7 +624,11 @@
       html += siteNavLink(item, active);
     });
     html += "</div>";
-    html += "</nav></div>";
+    html += "</nav>";
+    html += '<div class="site-header-end">';
+    html += '<div class="site-header-tools">' + (opts.toolsHtml || "") + "</div>";
+    html += langSwitcherHtml();
+    html += "</div></div></div>";
     root.innerHTML = html;
     root.className =
       "site-header" + (opts.compact ? " site-header--compact" : "");
@@ -944,7 +964,7 @@
       li.className = "toc-l" + item.level;
       var a = document.createElement("a");
       a.href = "#" + item.id;
-      a.textContent = item.title;
+      a.textContent = formatLocalized(item.title);
       li.appendChild(a);
       tocUl.appendChild(li);
     });
@@ -952,6 +972,7 @@
     var article = document.createElement("article");
     article.className = "domain-doc";
     article.innerHTML = doc.html;
+    localizeDigitsInTree(article);
 
     layout.appendChild(tocNav);
     layout.appendChild(article);

@@ -150,6 +150,7 @@ button { font: inherit; cursor: pointer; }
 }
 .site-header-row {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.75rem;
   min-width: 0;
@@ -181,9 +182,11 @@ button { font: inherit; cursor: pointer; }
 .site-header-end .lang-switch { flex-shrink: 0; }
 .site-nav {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -302,16 +305,13 @@ button { font: inherit; cursor: pointer; }
 }
 
 @media (max-width: 720px) {
-  .site-nav-divider { display: none; }
-  .site-nav-group--primary,
-  .site-nav-group--ref {
-    width: 100%;
-    justify-content: stretch;
+  .site-header-inner {
+    padding-inline: 0.75rem;
   }
-  .site-nav-group .site-nav-link {
-    flex: 1;
-    text-align: center;
-    padding-inline: 0.35rem;
+  .site-nav-divider { display: none; }
+  .site-nav-link {
+    padding-inline: 0.5rem;
+    font-size: 0.78rem;
   }
   .story-lead-actions { width: 100%; }
   .story-action { flex: 1; justify-content: center; }
