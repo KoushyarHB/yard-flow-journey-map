@@ -1,33 +1,41 @@
 {
-  "generatedAt": "2026-07-20T12:11:06.646Z",
+  "generatedAt": "2026-07-20T12:20:54.377Z",
   "ui": {
     "brand": {
       "en": "Yard Flow · business usage story",
       "fa": "Yard Flow · راهنمای کاربرد عملیاتی"
+    },
+    "navBrand": {
+      "en": "Yard Flow",
+      "fa": "Yard Flow"
+    },
+    "navAriaLabel": {
+      "en": "Guide sections",
+      "fa": "بخش‌های راهنما"
     },
     "navStart": {
       "en": "Start",
       "fa": "شروع"
     },
     "navStory": {
-      "en": "Cargo story",
-      "fa": "داستان کالا"
+      "en": "Story",
+      "fa": "داستان"
     },
     "navRoles": {
-      "en": "By role",
-      "fa": "بر اساس نقش"
+      "en": "Roles",
+      "fa": "نقش‌ها"
     },
     "navGlossary": {
       "en": "Glossary",
-      "fa": "واژه‌نامه"
+      "fa": "واژه‌ها"
     },
     "navModels": {
-      "en": "Domain model",
-      "fa": "مدل دامنه"
+      "en": "Model",
+      "fa": "مدل"
     },
     "navPrezi": {
-      "en": "Flow tour",
-      "fa": "تور جریان"
+      "en": "Tour",
+      "fa": "تور"
     },
     "langEn": {
       "en": "English",
@@ -91,7 +99,7 @@
     },
     "hubPreziTitle": {
       "en": "5. Flow tour",
-      "fa": "۵. تور جریان"
+      "fa": "۵. تور"
     },
     "hubPreziBody": {
       "en": "Prezi-style zoom through the business: overview → 12 steps → vessel. Click, arrow keys, or Next.",
@@ -128,6 +136,10 @@
     "storyIntro": {
       "en": "Read top to bottom. Each chapter is a usage beat: scene → why → physical yard → software actions → rules → done when → then the screens for that beat. ★ marks chapters where frontend build order disagrees with runtime business order.",
       "fa": "از بالا به پایین بخوانید. هر فصل یک گام عملیاتی است و این بخش‌ها را پشت سر هم دارد: شرح کار، دلیل این مرحله، آنچه در محوطه رخ می‌دهد، کار در نرم‌افزار، قواعد، وضعیت نهایی و در آخر صفحات همان لحظه. علامت ★ یعنی ترتیب ساخت فرانت با ترتیب واقعی عملیات یکی نیست."
+    },
+    "storyPreziLink": {
+      "en": "Tour →",
+      "fa": "تور ←"
     },
     "storyFoot": {
       "en": "Domain analysis §6 end-to-end flow, §7 detailed processes, §9 lifecycle, §10 rules. Backend runtime: yard selection readiness before release confirm.",

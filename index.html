@@ -7,21 +7,7 @@
   <link rel="stylesheet" href="shared/styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <h1 data-ui="brand">Yard Flow</h1>
-    <nav class="pills">
-      <a href="index.html" class="active" data-ui="navStart">Start</a>
-      <a href="story.html" data-ui="navStory">Cargo story</a>
-      <a href="roles.html" data-ui="navRoles">By role</a>
-      <a href="glossary.html" data-ui="navGlossary">Glossary</a>
-      <a href="models.html" data-ui="navModels">Domain model</a>
-      <a href="prezi.html" data-ui="navPrezi">Flow tour</a>
-    </nav>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang-btn="en">EN</button>
-      <button type="button" data-lang-btn="fa">فا</button>
-    </div>
-  </header>
+  <header id="site-header"></header>
 
   <main class="wrap">
     <section class="hero" id="hero"></section>
@@ -62,6 +48,7 @@
     (function () {
       var Y = YardStory;
       Y.initLangToggle();
+      Y.mountSiteHeader("index");
 
       function paint() {
         var d = Y.data();

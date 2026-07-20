@@ -1,52 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Domain model — Yard Flow</title>
-  <link rel="stylesheet" href="shared/styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <h1 data-ui="modelsPageTitle"></h1>
-    <nav class="pills">
-      <a href="index.html" data-ui="navStart">Start</a>
-      <a href="story.html" data-ui="navStory">Cargo story</a>
-      <a href="roles.html" data-ui="navRoles">By role</a>
-      <a href="glossary.html" data-ui="navGlossary">Glossary</a>
-      <a href="models.html" class="active" data-ui="navModels">Domain model</a>
-      <a href="prezi.html" data-ui="navPrezi">Flow tour</a>
-    </nav>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang-btn="en">EN</button>
-      <button type="button" data-lang-btn="fa">فا</button>
-    </div>
-  </header>
-
-  <main class="wrap models-wrap">
-    <a id="glossary-back" class="glossary-back" href="index.html"></a>
-    <div id="models-root"></div>
-  </main>
-
-  <script src="shared/domain-model.js"></script>
-  <script src="shared/data.js"></script>
-  <script src="shared/app.js"></script>
-  <script>
-    (function () {
-      var Y = YardStory;
-      Y.initLangToggle();
-      Y.initGlossaryBack();
-
-      function paint() {
-        Y.paintUi(document);
-        Y.renderDomainModels(document.getElementById("models-root"));
-        document.title =
-          Y.getLang() === "fa" ? "مدل دامنه — Yard Flow" : "Domain model — Yard Flow";
-      }
-
-      paint();
-      window.addEventListener("yf-lang-change", paint);
-    })();
-  </script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domain model — Yard Flow</title>
+  <link rel="stylesheet" href="shared/styles.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="wrap models-wrap">
+    <a id="glossary-back" class="glossary-back" href="index.html"></a>
+    <h1 class="page-title" data-ui="modelsPageTitle"></h1>
+    <div id="models-root"></div>
+  </main>
+
+  <script src="shared/domain-model.js"></script>
+  <script src="shared/data.js"></script>
+  <script src="shared/app.js"></script>
+  <script>
+    (function () {
+      var Y = YardStory;
+      Y.initLangToggle();
+      Y.mountSiteHeader("models");
+      Y.initGlossaryBack();
+
+      function paint() {
+        Y.paintUi(document);
+        Y.renderDomainModels(document.getElementById("models-root"));
+        document.title =
+          Y.getLang() === "fa" ? "مدل — Yard Flow" : "Model — Yard Flow";
+      }
+
+      paint();
+      window.addEventListener("yf-lang-change", paint);
+    })();
+  </script>
+</body>
+</html>

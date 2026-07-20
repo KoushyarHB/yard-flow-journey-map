@@ -7,28 +7,17 @@
   <link rel="stylesheet" href="shared/styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <h1 data-ui="storyPageTitle"></h1>
-    <nav class="pills">
-      <a href="index.html" data-ui="navStart">Start</a>
-      <a href="story.html" class="active" data-ui="navStory">Cargo story</a>
-      <a href="roles.html" data-ui="navRoles">By role</a>
-      <a href="glossary.html" data-ui="navGlossary">Glossary</a>
-      <a href="models.html" data-ui="navModels">Domain model</a>
-      <a href="prezi.html" data-ui="navPrezi">Flow tour</a>
-    </nav>
-    <div class="toolbar">
-      <button type="button" id="picture-mode"></button>
-    </div>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang-btn="en">EN</button>
-      <button type="button" data-lang-btn="fa">فا</button>
-    </div>
-  </header>
+  <header id="site-header"></header>
 
   <main class="wrap">
-    <p style="color:var(--muted);margin-bottom:0.75rem;font-size:0.92rem" data-ui="storyIntro" data-glossary></p>
-    <p class="story-tour-link"><a href="prezi.html" class="start" data-ui="storyPreziLink"></a></p>
+    <h1 class="page-title" data-ui="storyPageTitle"></h1>
+    <div class="story-lead">
+      <p class="story-lead-text" data-ui="storyIntro" data-glossary></p>
+      <div class="story-lead-actions">
+        <a href="prezi.html" class="story-action story-action--primary" data-ui="storyPreziLink"></a>
+        <button type="button" id="picture-mode" class="story-action story-action--toggle"></button>
+      </div>
+    </div>
     <div class="progress" id="progress"></div>
     <div class="lifecycle" id="lifecycle"></div>
     <div id="chapters"></div>
@@ -41,6 +30,7 @@
     (function () {
       var Y = YardStory;
       Y.initLangToggle();
+      Y.mountSiteHeader("story");
       Y.initPictureMode();
 
       function paint() {
@@ -54,7 +44,7 @@
           root.appendChild(Y.renderChapter(ch));
         });
         document.title =
-          Y.getLang() === "fa" ? "داستان کالا — Yard Flow" : "Cargo story — Yard Flow";
+          Y.getLang() === "fa" ? "داستان — Yard Flow" : "Story — Yard Flow";
       }
 
       paint();
